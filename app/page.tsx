@@ -12,6 +12,7 @@ import Button from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import FloatingElements from '@/components/ui/FloatingElements';
+import GlowBackground from '@/components/ui/GlowBackground';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 // Icon mapping for services
@@ -149,14 +150,11 @@ const getWidthClass = (width: string) => {
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-hidden md:overflow-visible">
       {/* Hero Section */}
       <section className="section relative">
         {/* Background Glowing Effect - inside hero section */}
-        <div
-          className="absolute top-80 bottom-0 left-1/2 transform -translate-x-1/2 w-[1200px] h-[200px] bg-[var(--accent-secondary)] rounded-full pointer-events-none z-0"
-          style={{ filter: 'blur(120px)' }}
-        ></div>
+        <GlowBackground variant="hero" color="secondary" intensity="medium" />
 
         {/* Floating Elements */}
         <FloatingElements />
@@ -172,7 +170,13 @@ export default function Home() {
               {HERO_CONTENT.subtitle}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-              <Button size="md" className="group font-body glow-button">
+              <Button
+                size="md"
+                className="group font-body glow-button"
+                style={{
+                  animation: 'float-smooth 3s ease-in-out infinite',
+                }}
+              >
                 {HERO_CONTENT.ctaPrimary}
                 <svg
                   className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
@@ -579,14 +583,17 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section">
-        <div className="container">
-          <div className="mx-auto max-w-2xl text-center">
+      <section id="contact" className="section relative">
+        {/* Background Glowing Effect for contact section */}
+        <GlowBackground variant="contact" color="primary" intensity="strong" />
+
+        <div className="container relative z-20">
+          <div className="mx-auto max-w-2xl text-center px-4 sm:px-0">
             <h3 className="heading-3">{CONTACT_CONTENT.title}</h3>
           </div>
 
           {/* Filter Badges */}
-          <div className="mt-8 flex justify-center items-center gap-3 lg:gap-4">
+          <div className="mt-8 flex justify-center items-center gap-2 sm:gap-3 lg:gap-4 flex-wrap">
             {['direct', 'simple', 'human'].map((filter, index) => (
               <Badge
                 key={`contact-${filter}-${index}`}
@@ -598,36 +605,56 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mx-auto mt-16 max-w-2xl text-center">
-            <p className="font-body text-lg text-[var(--text-secondary)] leading-relaxed">
-              Have a project in mind? Not sure where to start? Let&apos;s talk.
-              Whether it&apos;s a full build or just a quick consultation,
-              we&apos;re happy to help you figure out the best path forward.
-            </p>
-            <h3 className="font-body mt-6 text-xl font-medium text-[var(--text-primary)]">
-              We don&apos;t do hard sells — just honest conversations.
-            </h3>
-            <div className="mt-8">
-              <Button variant="secondary" size="md" className="group font-body">
-                Send us an email
-                <svg
-                  className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+          <div className="mx-auto mt-8 max-w-2xl text-center relative z-30 px-4 sm:px-0">
+            {/* Subtle gradient overlay for enhanced glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--accent-primary)]/5 to-transparent rounded-2xl pointer-events-none" />
+
+            <div className="relative">
+              <p className="font-body text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+                Have a project in mind? Not sure where to start? Let&apos;s
+                talk. Whether it&apos;s a full build or just a quick
+                consultation, we&apos;re happy to help you figure out the best
+                path forward. We don&apos;t do hard sells — just honest
+                conversations.
+              </p>
+              <div className="mt-6 sm:mt-8">
+                <Button
+                  variant="primary"
+                  size="md"
+                  className="group font-body glow-button w-full sm:w-auto"
+                  style={{
+                    animation: 'float-smooth 3s ease-in-out infinite',
+                  }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                  />
-                </svg>
-              </Button>
+                  Send us an email
+                  <svg
+                    className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    />
+                  </svg>
+                </Button>
+              </div>
+              <p className="font-body mt-4 text-xs sm:text-sm text-[var(--text-secondary)]">
+                {CONTACT_CONTENT.responseTime}
+              </p>
             </div>
-            <p className="font-body mt-4 text-sm text-[var(--text-muted)]">
-              {CONTACT_CONTENT.responseTime}
-            </p>
+          </div>
+
+          {/* SVG Ellipse inside the container, below the button - same as hero section */}
+          <div className="mt-16 w-full relative z-30">
+            <img
+              src="/elements/elipse_planet_shape.svg"
+              alt="Planet shape"
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
@@ -637,6 +664,6 @@ export default function Home() {
         sections={FOOTER_SECTIONS}
         description={COMPANY_INFO.description}
       />
-    </>
+    </div>
   );
 }

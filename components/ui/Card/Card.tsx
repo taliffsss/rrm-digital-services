@@ -11,13 +11,13 @@ import {
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = 'default', children, ...props }, ref) => {
-    const baseClasses = 'rounded-lg border transition-all duration-200';
+    const baseClasses = 'rounded-2xl border transition-all duration-200';
 
     const variantClasses = {
-      default: 'bg-[var(--bg-card)] border-[var(--border-primary)]',
+      default: 'bg-[var(--bg-card)] border-[var(--border-secondary)]',
       elevated:
-        'bg-[var(--bg-card)] border-[var(--border-primary)] shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]',
-      outlined: 'bg-transparent border-[var(--border-primary)]',
+        'bg-[var(--bg-card)] border-[var(--border-secondary)] shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]',
+      outlined: 'bg-transparent border-[var(--border-secondary)]',
     };
 
     return (
