@@ -4,13 +4,7 @@ import { cn } from '@/lib/utils';
 import { FooterProps } from './Footer.types';
 import Image from 'next/image';
 
-const Footer = ({
-  sections,
-  logo,
-  description,
-  socialLinks,
-  className,
-}: FooterProps) => {
+const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
   return (
     <footer className={cn('bg-[var(--bg-primary)]', className)}>
       <div className="container py-12 lg:py-16">
