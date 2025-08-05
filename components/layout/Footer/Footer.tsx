@@ -47,8 +47,8 @@ const Footer = ({
                     {section.title}
                   </h3>
                   <ul className="space-y-3">
-                    {section.items.map(item => (
-                      <li key={item.href}>
+                    {section.items.map((item, index) => (
+                      <li key={`${item.href}-${index}`}>
                         <a
                           href={item.href}
                           className="font-body text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"

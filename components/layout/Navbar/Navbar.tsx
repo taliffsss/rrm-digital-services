@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { useTheme } from '@/hooks/useTheme';
 import { NavbarProps, MobileMenuProps } from './Navbar.types';
 import Button from '@/components/ui/Button';
+import Link from 'next/link';
 
 const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
   if (!isOpen) return null;
@@ -48,13 +49,13 @@ const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
             <ul className="space-y-4">
               {items.map(item => (
                 <li key={item.href}>
-                  <a
+                  <Link
                     href={item.href}
                     className="font-body block text-lg text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors"
                     onClick={onClose}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

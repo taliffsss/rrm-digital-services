@@ -13,7 +13,7 @@ import { Card, CardContent } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import FloatingElements from '@/components/ui/FloatingElements';
 import Footer from '@/components/layout/Footer';
-
+import Image from 'next/image';
 // Icon mapping for services
 const getServiceIcon = (serviceId: string) => {
   const iconMap = {
@@ -192,10 +192,12 @@ export default function Home() {
 
             {/* SVG Ellipse inside the container, below the button */}
             <div className="mt-16 w-full relative z-30">
-              <img
+              <Image
                 src="/elements/elipse_planet_shape.svg"
                 alt="Planet shape"
                 className="w-full h-auto"
+                width={1200}
+                height={200}
               />
             </div>
           </div>
@@ -238,9 +240,11 @@ export default function Home() {
                   </span>
                   <CardContent className="card-content p-6">
                     <div className="mb-4">
-                      <img
+                      <Image
                         src={getServiceIcon(service.id)}
                         alt={service.title}
+                        width={48}
+                        height={48}
                         className="w-12 h-12 service-icon"
                       />
                     </div>
@@ -311,9 +315,11 @@ export default function Home() {
                       key={`work-item-${item.id}`}
                       className={`${getWidthClass(item.width)} group relative overflow-hidden rounded-lg border border-[var(--border-primary)] bg-[var(--bg-card)] hover:border-[var(--accent-primary)] hover:shadow-[0_0_30px_rgba(118,183,20,0.3)] transition-all duration-300 cursor-pointer`}
                     >
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.title}
+                        width={500}
+                        height={500}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
@@ -529,9 +535,11 @@ export default function Home() {
             {/* Right column: Regular image with floating rectangles */}
             <div className="relative">
               <div className="relative">
-                <img
+                <Image
                   src="/images/rrm.png"
                   alt="Team collaboration"
+                  width={500}
+                  height={500}
                   className="w-full h-auto rounded-lg object-cover"
                 />
                 {/* Floating rectangles - always visible with animation */}
