@@ -27,12 +27,25 @@ export const FOOTER_SECTIONS: NavSection[] = [
     ],
   },
   {
-    title: 'Legal',
+    title: 'Contact',
     items: [
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Terms of Service', href: '/terms' },
-      { label: 'Cookie Policy', href: '/cookies' },
-      { label: 'GDPR', href: '/gdpr' },
+      { label: 'Oriental Mindoro', href: '#', icon: '/icon/map-pin.svg' },
+      {
+        label: '+09123456789',
+        href: 'tel:+09123456789',
+        icon: '/icon/phone.svg',
+      },
+      {
+        label: 'hello@rrmdigital.com',
+        href: 'mailto:hello@rrmdigital.com',
+        icon: '/icon/mail.svg',
+      },
+      {
+        label: 'Facebook',
+        href: 'https://www.facebook.com/profile.php?id=61578835422442',
+        icon: '/icon/facebook.svg',
+        external: true,
+      },
     ],
   },
 ];
