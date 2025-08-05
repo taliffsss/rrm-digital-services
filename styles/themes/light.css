@@ -1,0 +1,51 @@
+/* Light Theme */
+[data-theme='light'] {
+  /* Background colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.1);
+
+  /* Text colors */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+
+  /* Border colors */
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --border-accent: #95df21;
+
+  /* Accent colors - Green theme */
+  --accent-primary: #95df21;
+  --accent-secondary: #7bc91a;
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
+
+  /* Button colors */
+  --btn-primary-bg: #95df21;
+  --btn-primary-text: #0f172a;
+  --btn-primary-hover: #7bc91a;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-text: #95df21;
+  --btn-secondary-hover: rgba(149, 223, 33, 0.1);
+  --btn-ghost-bg: transparent;
+  --btn-ghost-text: #64748b;
+  --btn-ghost-hover: #f1f5f9;
+
+  /* Border radius */
+  --radius: 0.5rem;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
