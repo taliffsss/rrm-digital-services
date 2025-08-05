@@ -6,6 +6,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { NavbarProps, MobileMenuProps } from './Navbar.types';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
   if (!isOpen) return null;
@@ -82,30 +83,32 @@ const Navbar = ({ items, logo, cta, className }: NavbarProps) => {
           {/* Logo */}
           <div className="flex items-center">
             {logo || (
-              <a
+              <Link
                 href="/"
                 className="flex items-center space-x-3"
                 aria-label="Home"
               >
-                <img
+                <Image
                   src="/logo/rrm_logo.svg"
                   alt="RRM DIGITAL"
+                  width={500}
+                  height={500}
                   className="h-16 w-auto"
                 />
-              </a>
+              </Link>
             )}
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {items.map(item => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="font-body text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 

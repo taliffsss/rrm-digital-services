@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { FooterProps } from './Footer.types';
+import Image from 'next/image';
 
 const Footer = ({
   sections,
@@ -23,9 +24,11 @@ const Footer = ({
           <div className="lg:col-span-4">
             {logo || (
               <div className="flex items-center space-x-3 mb-4">
-                <img
+                <Image
                   src="/logo/rrm_logo.svg"
                   alt="RRM DIGITAL"
+                  width={500}
+                  height={500}
                   className="h-16 w-auto"
                 />
               </div>
