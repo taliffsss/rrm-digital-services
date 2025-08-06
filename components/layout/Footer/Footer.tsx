@@ -4,13 +4,7 @@ import { cn } from '@/lib/utils';
 import { FooterProps } from './Footer.types';
 import ThemeAwareLogo from '@/components/ui/ThemeAwareLogo';
 
-const Footer = ({
-  sections,
-  logo,
-  description,
-  socialLinks,
-  className,
-}: FooterProps) => {
+const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
   return (
     <footer className={cn('bg-[var(--bg-primary)]', className)}>
       <div className="container py-12 lg:py-16">
@@ -47,8 +41,8 @@ const Footer = ({
                     {section.title}
                   </h5>
                   <ul className="space-y-3">
-                    {section.items.map(item => (
-                      <li key={item.id}>
+                    {section.items.map((item, index) => (
+                      <li key={`${item.href}-${index}`}>
                         <a
                           href={item.href}
                           className="font-body text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors flex items-center gap-2"
