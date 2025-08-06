@@ -203,6 +203,7 @@ export default function Home() {
                 className="w-full h-auto"
                 width={1200}
                 height={200}
+                loading="eager"
               />
             </div>
           </div>
@@ -250,6 +251,7 @@ export default function Home() {
                         alt={service.title}
                         width={48}
                         height={48}
+                        loading="eager"
                         className="w-12 h-12 service-icon"
                       />
                     </div>
@@ -325,6 +327,7 @@ export default function Home() {
                         alt={item.title}
                         width={500}
                         height={500}
+                        loading="eager"
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
@@ -445,6 +448,7 @@ export default function Home() {
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
                       width={50}
                       height={50}
+                      loading="eager"
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
@@ -452,6 +456,7 @@ export default function Home() {
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
                       width={50}
                       height={50}
+                      loading="eager"
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1654110455429-cf322b40a906?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
@@ -459,6 +464,7 @@ export default function Home() {
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
                       width={50}
                       height={50}
+                      loading="eager"
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
@@ -466,6 +472,7 @@ export default function Home() {
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
                       width={50}
                       height={50}
+                      loading="eager"
                     />
                   </div>
 
@@ -516,6 +523,9 @@ export default function Home() {
 
               {/* Description */}
               <div className="mt-4">
+                <p className="font-body text-[var(--text-secondary)] leading-relaxed">
+                  At RRM Digital Services, we don’t just build digital products — we bring ideas to life, shape them to perfection, and help them reach the world.
+                </p>
                 {/* Three-column layout for Render, Refine, Mobilize */}
                 <div className="mt-8 grid grid-cols-1 gap-3 max-w-4xl">
                   <Card variant="elevated" className="group relative">
@@ -531,9 +541,7 @@ export default function Home() {
                         </h4>
                       </div>
                       <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                        We turn your vision into working solutions — from
-                        websites and apps to AI tools making your digital goals
-                        a reality.
+                        We turn your vision into working solutions — whether it's a website, an app, or an AI tool. Think of us as the team that brings your digital goals into reality.
                       </p>
                     </CardContent>
                   </Card>
@@ -551,9 +559,7 @@ export default function Home() {
                         </h4>
                       </div>
                       <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                        From UI/UX to backend performance and strategy, we
-                        enhance every detail through data, testing, and
-                        iteration.
+                        We believe good is never good enough. From UI/UX to backend performance and campaign strategy, we improve everything through data, testing, and iteration.
                       </p>
                     </CardContent>
                   </Card>
@@ -571,18 +577,17 @@ export default function Home() {
                         </h4>
                       </div>
                       <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                        We launch scalable platforms, engage users, and spark
-                        growth boosting visibility and driving adoption.
+                        We help businesses grow by launching scalable platforms, activating users, and creating momentum — fast. Whether it's social reach or product adoption, we make things move.
                       </p>
                     </CardContent>
                   </Card>
                 </div>
 
                 <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-8">
-                  We’re a passionate team of developers, designers, and
-                  strategists dedicated to helping startups and businesses
-                  thrive, at RRM Digital Services, we render, refine, and
-                  mobilize your success.
+                  We're a passionate team of developers, designers, and strategists committed to helping startups and businesses succeed in the digital world.
+                </p>
+                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-8">
+                  RRM Digital Services — we render, refine, and mobilize your success.
                 </p>
               </div>
             </div>
@@ -596,6 +601,7 @@ export default function Home() {
                   width={500}
                   height={500}
                   className="w-full h-auto rounded-lg object-cover"
+                  loading="eager"
                 />
                 {/* Floating rectangles - always visible with animation */}
                 <div className="absolute inset-0 pointer-events-none">
@@ -643,32 +649,11 @@ export default function Home() {
             <h3 className="heading-3">{CONTACT_CONTENT.title}</h3>
           </div>
 
-          {/* Filter Badges */}
-          <div className="mt-8 flex justify-center items-center gap-2 sm:gap-3 lg:gap-4 flex-wrap">
-            {['Direct', 'Simple', 'Human'].map((filter, index) => (
-              <Badge
-                key={`contact-${filter}-${index}`}
-                size="md"
-                className="font-body"
-              >
-                {filter}
-              </Badge>
-            ))}
-          </div>
-
           <div className="mx-auto mt-8 max-w-2xl text-center relative z-30 px-4 sm:px-0">
             {/* Subtle gradient overlay for enhanced glow effect */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--accent-primary)]/5 to-transparent rounded-2xl pointer-events-none" />
 
             <div className="relative">
-              <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                Have a project in mind? Not sure where to start? Let&apos;s
-                talk. Whether it&apos;s a full build or just a quick
-                consultation, we&apos;re happy to help you figure out the best
-                path forward. We don&apos;t do hard sells just honest
-                conversations.
-              </p>
-
               {/* Contact Form */}
               <div className="mt-8 max-w-md mx-auto">
                 <form className="space-y-4">
