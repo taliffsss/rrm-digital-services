@@ -51,7 +51,7 @@ const Footer = ({
                   </h5>
                   <ul className="space-y-3">
                     {section.items.map(item => (
-                      <li key={item.href}>
+                      <li key={item.id}>
                         <a
                           href={item.href}
                           className="font-body text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors flex items-center gap-2"
@@ -88,7 +88,7 @@ const Footer = ({
         <div className="mt-12 pt-8 border-t border-[var(--border-primary)]">
           <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
             <p className="font-body text-sm text-[var(--text-muted)]">
-              RRM Digital 2025 All Rights Reserved
+              RRM Digital Services {new Date().getFullYear()} All Rights Reserved
             </p>
             <div className="flex space-x-6 text-sm text-[var(--text-muted)]">
               <a

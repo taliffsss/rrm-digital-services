@@ -3,7 +3,6 @@ import {
   SERVICES,
   WORK_FILTERS,
   PROCESS_STEPS,
-  TEAM_CONTENT,
   CONTACT_CONTENT,
   COMPANY_INFO,
 } from '@/constants/content';
@@ -14,16 +13,6 @@ import Badge from '@/components/ui/Badge';
 import FloatingElements from '@/components/ui/FloatingElements';
 import GlowBackground from '@/components/ui/GlowBackground';
 import Footer from '@/components/layout/Footer';
-
-// Icon mapping for services
-const getServiceIcon = (serviceId: string) => {
-  const iconMap = {
-    design: '/icon/web_design.svg',
-    development: '/icon/web_development.svg',
-    desktop: '/icon/graphic_design.svg',
-  };
-  return iconMap[serviceId as keyof typeof iconMap] || serviceId;
-};
 
 // Gallery data - organized by rows with uniform height
 const GALLERY_ROWS = [
@@ -215,7 +204,7 @@ export default function Home() {
 
           {/* Badge Navigation */}
           <div className="mt-8 flex justify-center items-center gap-3 lg:gap-4">
-            {['design.', 'code.', 'deliver.'].map((badge, index) => (
+            {['Design', 'Code', 'Deliver'].map((badge, index) => (
               <Badge
                 key={`services-${badge}-${index}`}
                 size="md"
@@ -243,7 +232,7 @@ export default function Home() {
                   <CardContent className="card-content p-6">
                     <div className="mb-4">
                       <img
-                        src={getServiceIcon(service.id)}
+                        src={service.iconPath}
                         alt={service.title}
                         className="w-12 h-12 service-icon"
                       />
@@ -253,9 +242,6 @@ export default function Home() {
                       {service.description}
                     </p>
                     <div className="mb-4">
-                      <h5 className="font-body mb-2 text-sm font-medium text-[var(--text-primary)]">
-                        INCLUDES:
-                      </h5>
                       <ul className="space-y-1">
                         {service.includes.map(item => (
                           <li
@@ -270,6 +256,9 @@ export default function Home() {
                         ))}
                       </ul>
                     </div>
+                      <h5 className="font-body mb-2 text-sm font-medium text-[var(--text-primary)]">
+                        {service.footer}
+                      </h5>
                     <Button
                       variant="secondary"
                       size="md"
@@ -289,7 +278,7 @@ export default function Home() {
       <section id="work" className="section">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h3 className="heading-3">See Our Work in Action</h3>
+            <h3 className="heading-3">Our Work</h3>
           </div>
 
           {/* Filter Badges */}
@@ -368,7 +357,7 @@ export default function Home() {
 
               {/* Badge Navigation */}
               <div className="mt-8 flex flex-wrap items-center gap-3 lg:gap-4">
-                {['clarity.', 'structure.', 'results.'].map((badge, index) => (
+                {['Clarity', 'Structure', 'Results'].map((badge, index) => (
                   <Badge
                     key={`process-${badge}-${index}`}
                     size="md"
@@ -469,7 +458,7 @@ export default function Home() {
                     size="md"
                     className="group font-body"
                   >
-                    <span>Start Now</span>
+                    <span>Connect with us</span>
                     <svg
                       className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
                       fill="none"
@@ -497,35 +486,27 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
             {/* Left column: Title, badges, and description */}
             <div>
-              <h3 className="heading-3 text-left">{TEAM_CONTENT.title}</h3>
-
-              {/* Badge Navigation */}
-              <div className="mt-8 flex flex-wrap items-center gap-3 lg:gap-4">
-                {['people.', 'purpose.', 'precision.'].map((badge, index) => (
-                  <Badge
-                    key={`team-${badge}-${index}`}
-                    size="md"
-                    className="font-body"
-                  >
-                    {badge}
-                  </Badge>
-                ))}
-              </div>
+              <h3 className="heading-3 text-left">Who We Are</h3>
 
               {/* Description */}
               <div className="mt-8">
                 <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                  At RRM Digital, you don&apos;t get handed off to interns or
-                  account managers. You speak directly to the people doing the
-                  work — the ones who care as much about the outcome as you do.
+                  At RRM Digital Services, we don&apos;t just build digital products — we bring ideas to life, shape them to perfection, and help them reach the world.
                 </p>
                 <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
-                  We bring together a years of experience across UI/UX design,
-                  full-stack development, and product architecture — as well as
-                  graphic design services like branding, custom illustrations,
-                  and ad creatives. From small startups to complex enterprise
-                  systems, we craft solutions that are both visually striking
-                  and technically robust.
+                  Render &#45; We turn your vision into working solutions — whether it's a website, an app, or an AI tool. Think of us as the team that brings your digital goals into reality.
+                </p>
+                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
+                  Refine &#45; We believe good is never good enough. From UI/UX to backend performance and campaign strategy, we improve everything through data, testing, and iteration.
+                </p>
+                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
+                  Mobilize &#45; We help businesses grow by launching scalable platforms, activating users, and creating momentum — fast. Whether it's social reach or product adoption, we make things move.
+                </p>
+                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
+                  We're a passionate team of developers, designers, and strategists committed to helping startups and businesses succeed in the digital world.
+                </p>
+                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
+                  RRM Digital Services — we render, refine, and mobilize your success.
                 </p>
               </div>
             </div>

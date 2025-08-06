@@ -3,51 +3,62 @@
 export const HERO_CONTENT = {
   title: 'We Build DIGITAL EXPERIENCES That Matters',
   subtitle:
-    'We design, develop, and deliver elegant, high-performing websites and web applications — built by real developers who understand what your business needs to grow.',
-  ctaPrimary: "Let's Talk",
+    'We craft beautiful, fast, and reliable websites and web apps — tailored to help your business grow, backed by a team that understands your goals.',
+  ctaPrimary: "Connect with us",
   ctaSecondary: 'Learn More',
 };
 
 export const SERVICES = [
   {
-    id: 'design',
+    id: 1,
     title: 'Web & Mobile Design',
     description:
-      'Beautiful, intuitive interfaces that users love to interact with.',
+      'Crafting beautiful, user-friendly designs that feel natural and easy to use. We make sure your users enjoy every interaction.',
     icon: '🎨',
-    includes: ['UI/UX Design', 'Wireframing', 'Prototyping', 'User Research'],
+    iconPath: '/icon/web_design.svg',
+    includes: [
+      'UI/UX Design that makes sense',
+      'Wireframes that map out great ideas',
+      'Clickable prototypes that bring your vision to life',
+      'User research to guide smart design decisions'
+    ],
+    footer: "Let’s explore how your brand can stand out.",
   },
   {
-    id: 'development',
+    id: 2,
     title: 'Web Development',
     description:
-      'Robust, scalable web applications built with modern technologies.',
+      'Need powerful desktop software? We build cross-platform apps that help your business run better—online or offline.',
     icon: '💻',
+    iconPath: '/icon/web_development.svg',
     includes: [
-      'Frontend Development',
-      'Backend Development',
-      'API Integration',
-      'Performance Optimization',
+      'Frontend that looks good and feels right',
+      'Backend that powers everything smoothly',
+      'Seamless API integrations',
+      'Performance that keeps things fast and reliable',
     ],
+    footer: "Explore how we bring ideas to life online.",
   },
   {
-    id: 'desktop',
+    id: 3,
     title: 'Desktop Applications',
-    description: 'Cross-platform desktop applications for modern businesses.',
+    description: 'Need powerful desktop software? We build cross-platform apps that help your business run better—online or offline.',
     icon: '🖥️',
+    iconPath: '/icon/graphic_design.svg',
     includes: [
-      'Cross-platform Development',
-      'Native Performance',
-      'Offline Capability',
-      'System Integration',
+      'Develop apps that work on Windows & Mac',
+      'Ensure native-like speed and feel',
+      'Add offline capabilities when needed',
+      'Seamlessly integrate with your existing systems',
     ],
+    footer: "Explore desktop solutions tailored for your workflow.",
   },
 ];
 
 export const WORK_FILTERS = [
-  { id: 'all', label: 'real.' },
-  { id: 'recent', label: 'tested.' },
-  { id: 'delivered', label: 'delivered.' },
+  { id: 'all', label: 'Real' },
+  { id: 'recent', label: 'Tested' },
+  { id: 'delivered', label: 'Delivered' },
 ];
 
 export const PROCESS_STEPS = [
@@ -55,28 +66,28 @@ export const PROCESS_STEPS = [
     id: 'discover',
     title: 'Discover',
     description:
-      'We start with a conversation — to understand your goals, pain points, and vision. No assumptions. No jargon.',
+      'We begin with a real conversation — to understand your goals, challenges, and what success looks like for you. No assumptions. Just honest, strategic discovery.',
     icon: '🔍',
   },
   {
     id: 'design',
     title: 'Design',
     description:
-      'We translate ideas into wireframes and clean UI — always with usability and business impact in mind.',
+      'We turn ideas into thoughtful wireframes and sleek UI — always crafted for usability, performance, and real business results.',
     icon: '✏️',
   },
   {
     id: 'develop',
     title: 'Develop',
     description:
-      'Using modern frameworks, we build fast, secure, and scalable solutions — all custom, never bloated.',
+      'We develop thoughtful, reliable digital solutions that are tailored to your needs — with clean code, smart architecture, and a focus on long-term success.',
     icon: '⚡',
   },
   {
     id: 'deliver',
     title: 'Deliver',
     description:
-      "We test, deploy, and support you post-launch — because launch day isn't the end, it's just the start.",
+      "We don’t just launch — we stay with you. From testing to deployment and beyond, we support your growth long after go-live.",
     icon: '🚀',
   },
 ];
