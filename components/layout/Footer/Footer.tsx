@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { FooterProps } from './Footer.types';
-import Image from 'next/image';
+import ThemeAwareLogo from '@/components/ui/ThemeAwareLogo';
 
 const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
   return (
@@ -13,21 +13,15 @@ const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
           <div className="lg:col-span-4">
             {logo || (
               <div className="flex items-center space-x-3 mb-4">
-                <Image
-                  src="/logo/rrm_logo.svg"
-                  alt="RRM DIGITAL"
-                  width={500}
-                  height={500}
-                  className="h-16 w-auto"
-                />
+                <ThemeAwareLogo alt="RRM DIGITAL" className="h-16 w-auto" />
               </div>
             )}
             <div className="mb-6">
               <h3 className="font-body font-semibold text-[var(--text-primary)] mb-2">
                 RRM Digital Services
               </h3>
-              <p className="font-body text-[var(--accent-primary)]">
-                design. code. deliver.
+              <p className="font-body text-xs text-[var(--accent-primary)]">
+                We render, refine, and mobilize your success.
               </p>
             </div>
             {socialLinks && <div className="flex space-x-4">{socialLinks}</div>}
@@ -49,7 +43,6 @@ const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
                   <ul className="space-y-3">
                     {section.items.map((item, index) => (
                       <li key={`${item.href}-${index}`}>
-
                         <a
                           href={item.href}
                           className="font-body text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors flex items-center gap-2"

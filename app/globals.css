@@ -11,11 +11,6 @@
   :root {
     /* Border radius - Global design token */
     --radius: 0.5rem;
-
-    /* Fallback colors - will be overridden by theme files */
-    --bg-primary: #000525;
-    --text-primary: #f8fafc;
-    --accent-primary: #95df21;
   }
 
   * {
@@ -23,7 +18,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
@@ -314,11 +310,11 @@
 .card-effect:hover {
   background: linear-gradient(
     45deg,
-    #95df21 0%,
+    var(--accent-primary) 0%,
     #487223 25%,
-    #000525 50%,
+    var(--bg-primary) 50%,
     #487223 75%,
-    #95df21 100%
+    var(--accent-primary) 100%
   );
   background-size: 400% 400%;
   animation: gradient-move 6s ease infinite;

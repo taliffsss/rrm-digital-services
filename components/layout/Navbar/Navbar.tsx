@@ -5,7 +5,8 @@ import { cn } from '@/lib/utils';
 import { useTheme } from '@/hooks/useTheme';
 import { NavbarProps, MobileMenuProps } from './Navbar.types';
 import Link from 'next/link';
-import Image from 'next/image';
+import Button from '@/components/ui/Button';
+import ThemeAwareLogo from '@/components/ui/ThemeAwareLogo';
 
 const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
   if (!isOpen) return null;
@@ -66,7 +67,7 @@ const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
   );
 };
 
-const Navbar = ({ items, logo, className }: NavbarProps) => {
+const Navbar = ({ items, cta, logo, className }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme, mounted } = useTheme();
 
@@ -87,13 +88,7 @@ const Navbar = ({ items, logo, className }: NavbarProps) => {
                 className="flex items-center space-x-3"
                 aria-label="Home"
               >
-                <Image
-                  src="/logo/rrm_logo.svg"
-                  alt="RRM DIGITAL"
-                  width={500}
-                  height={500}
-                  className="h-16 w-auto"
-                />
+                <ThemeAwareLogo alt="RRM DIGITAL" className="h-16 w-auto" />
               </Link>
             )}
           </div>
@@ -113,6 +108,16 @@ const Navbar = ({ items, logo, className }: NavbarProps) => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
+            {/* CTA Button */}
+            {cta || (
+              <a href="#contact">
+                <div className="hidden lg:block">
+                  <Button variant="primary" size="sm" className="font-body">
+                    Connect with us!
+                  </Button>
+                </div>
+              </a>
+            )}
             {/* Theme Toggle */}
             {mounted && (
               <button
@@ -155,7 +160,7 @@ const Navbar = ({ items, logo, className }: NavbarProps) => {
                     <svg
                       className={`h-4 w-4 transition-colors duration-200 ${
                         theme === 'light'
-                          ? 'text-[#000525]'
+                          ? 'text-[var(--text-primary)]'
                           : 'text-[var(--accent-primary)]'
                       }`}
                       fill="none"

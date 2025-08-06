@@ -67,9 +67,6 @@ const ContactUs: React.FC<ContactUsProps> = ({
       // Simulate API call - replace with your actual API endpoint
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
-      // Here you would typically send the data to your backend
-      console.log('Form submitted with values:', values);
-      
       // Success handling
       setSubmitStatus({
         type: 'success',
@@ -81,7 +78,6 @@ const ContactUs: React.FC<ContactUsProps> = ({
       
     } catch (error) {
       // Error handling
-      console.error('Form submission error:', error);
       setSubmitStatus({
         type: 'error',
         message: 'Sorry, there was an error sending your message. Please try again.',
@@ -128,11 +124,6 @@ const ContactUs: React.FC<ContactUsProps> = ({
                     : 'border-white/20 focus:border-[var(--accent-primary)]'
                 }`}
               />
-              <ErrorMessage
-                name="name"
-                component="div"
-                className="mt-1 text-sm text-red-400 font-body"
-              />
             </div>
 
             {/* Email and Contact Number Fields in one row */}
@@ -148,11 +139,6 @@ const ContactUs: React.FC<ContactUsProps> = ({
                       : 'border-white/20 focus:border-[var(--accent-primary)]'
                   }`}
                 />
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="mt-1 text-sm text-red-400 font-body"
-                />
               </div>
               
               <div>
@@ -165,11 +151,6 @@ const ContactUs: React.FC<ContactUsProps> = ({
                       ? 'border-red-500 focus:border-red-400'
                       : 'border-white/20 focus:border-[var(--accent-primary)]'
                   }`}
-                />
-                <ErrorMessage
-                  name="contactNumber"
-                  component="div"
-                  className="mt-1 text-sm text-red-400 font-body"
                 />
               </div>
             </div>
@@ -186,11 +167,6 @@ const ContactUs: React.FC<ContactUsProps> = ({
                     ? 'border-red-500 focus:border-red-400'
                     : 'border-white/20 focus:border-[var(--accent-primary)]'
                 }`}
-              />
-              <ErrorMessage
-                name="message"
-                component="div"
-                className="mt-1 text-sm text-red-400 font-body"
               />
             </div>
 

@@ -1,3 +1,5 @@
+'use client';
+
 import {
   HERO_CONTENT,
   SERVICES,
@@ -13,7 +15,9 @@ import Badge from '@/components/ui/Badge';
 import FloatingElements from '@/components/ui/FloatingElements';
 import GlowBackground from '@/components/ui/GlowBackground';
 import Footer from '@/components/layout/Footer';
+import ContactUs from '@/components/layout/Forms/ContactUs';
 import Image from 'next/image';
+
 // Icon mapping for services
 const getServiceIcon = (serviceId: number) => {
   const iconMap: Record<number, string> = {
@@ -148,6 +152,20 @@ const getWidthClass = (width: string) => {
 };
 
 export default function Home() {
+  // Handle successful form submission
+  const handleContactSuccess = (data: any) => {
+    console.log('Contact form submitted successfully:', data);
+    // You can add additional success handling here
+    // For example: send analytics event, show toast notification, etc.
+  };
+
+  // Handle form submission error
+  const handleContactError = (error: any) => {
+    console.error('Contact form submission failed:', error);
+    // You can add additional error handling here
+    // For example: send error to monitoring service, show fallback options, etc.
+  };
+
   return (
     <div className="overflow-hidden md:overflow-visible">
       {/* Hero Section */}
@@ -361,7 +379,7 @@ export default function Home() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </Button>
+                </Button>
             </div>
           </div>
         </div>
@@ -524,7 +542,7 @@ export default function Home() {
               {/* Description */}
               <div className="mt-4">
                 <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                  At RRM Digital Services, we don’t just build digital products — we bring ideas to life, shape them to perfection, and help them reach the world.
+                  At RRM Digital Services, we don't just build digital products — we bring ideas to life, shape them to perfection, and help them reach the world.
                 </p>
                 {/* Three-column layout for Render, Refine, Mobilize */}
                 <div className="mt-8 grid grid-cols-1 gap-3 max-w-4xl">
@@ -584,7 +602,7 @@ export default function Home() {
                 </div>
 
                 <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-8">
-                  We're a passionate team of developers, designers, and strategists committed to helping startups and businesses succeed in the digital world.
+                  We're a creative and driven team of developers, designers, and strategists focused on building future-ready solutions that help startups and businesses grow and succeed in the digital age.
                 </p>
                 <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-8">
                   RRM Digital Services — we render, refine, and mobilize your success.
@@ -654,81 +672,12 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--accent-primary)]/5 to-transparent rounded-2xl pointer-events-none" />
 
             <div className="relative">
-              {/* Contact Form */}
-              <div className="mt-8 max-w-md mx-auto">
-                <form className="space-y-4">
-                  {/* Name Field */}
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Name"
-                      required
-                      className="w-full px-4 py-3 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] font-body focus:outline-none focus:border-[var(--accent-primary)] transition-colors"
-                    />
-                  </div>
-
-                  {/* Email and Contact Number Fields in one row */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      required
-                      className="w-full px-4 py-3 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] font-body focus:outline-none focus:border-[var(--accent-primary)] transition-colors"
-                    />
-                    <input
-                      type="tel"
-                      placeholder="Contact Number"
-                      required
-                      className="w-full px-4 py-3 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] font-body focus:outline-none focus:border-[var(--accent-primary)] transition-colors"
-                    />
-                  </div>
-
-                  {/* Message Field */}
-                  <div>
-                    <textarea
-                      placeholder="Message"
-                      rows={4}
-                      required
-                      className="w-full px-4 py-3 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] font-body focus:outline-none focus:border-[var(--accent-primary)] transition-colors resize-none"
-                    />
-                  </div>
-
-                  {/* Send Button */}
-                  <div>
-                    <Button
-                      type="submit"
-                      variant="primary"
-                      size="md"
-                      className="w-full group font-body"
-                    >
-                      Send
-                      <svg
-                        className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                        />
-                      </svg>
-                    </Button>
-                  </div>
-                </form>
-              </div>
+              {/* Contact Form - Now using the ContactUs component */}
+              <ContactUs 
+                onSubmitSuccess={handleContactSuccess}
+                onSubmitError={handleContactError}
+              />
             </div>
-          </div>
-
-          {/* SVG Ellipse inside the container, below the button - same as hero section */}
-          <div className="mt-16 w-full relative z-30">
-            <img
-              src="/elements/elipse_planet_shape.svg"
-              alt="Planet shape"
-              className="w-full h-auto"
-            />
           </div>
         </div>
       </section>
