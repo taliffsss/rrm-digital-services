@@ -28,6 +28,7 @@ export interface BaseComponentProps {
 
 // Navigation types
 export interface NavItem {
+  id: number;
   label: string;
   href: string;
   external?: boolean;

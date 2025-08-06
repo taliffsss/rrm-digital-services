@@ -44,7 +44,7 @@ const GlowBackground: React.FC<GlowBackgroundProps> = ({
       case 'hero':
         return 'absolute top-80 bottom-0 left-1/2 transform -translate-x-1/2 w-[1200px] h-[200px]';
       case 'contact':
-        return 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px]';
+        return 'absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px]';
       case 'custom':
         return 'absolute inset-0';
       default:

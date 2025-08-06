@@ -114,14 +114,6 @@ const Navbar = ({ items, logo, cta, className }: NavbarProps) => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            {/* CTA Button */}
-            {cta || (
-              <div className="hidden lg:block">
-                <Button variant="primary" size="sm" className="font-body">
-                  Contact
-                </Button>
-              </div>
-            )}
             {/* Theme Toggle */}
             {mounted && (
               <button
