@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { FooterProps } from './Footer.types';
+import ThemeAwareLogo from '@/components/ui/ThemeAwareLogo';
 
 const Footer = ({
   sections,
@@ -18,11 +19,7 @@ const Footer = ({
           <div className="lg:col-span-4">
             {logo || (
               <div className="flex items-center space-x-3 mb-4">
-                <img
-                  src="/logo/rrm_logo.svg"
-                  alt="RRM DIGITAL"
-                  className="h-16 w-auto"
-                />
+                <ThemeAwareLogo alt="RRM DIGITAL" className="h-16 w-auto" />
               </div>
             )}
             <div className="mb-6">

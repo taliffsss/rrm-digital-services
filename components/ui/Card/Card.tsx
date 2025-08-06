@@ -17,7 +17,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     const variantClasses = {
       default: 'bg-[var(--bg-card)]',
       elevated:
-        'bg-[var(--bg-card)] shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]',
+        'bg-[var(--bg-card)] shadow-[var(--card-shadow)] hover:shadow-[var(--card-shadow-hover)]',
       outlined: 'bg-transparent',
     };
 

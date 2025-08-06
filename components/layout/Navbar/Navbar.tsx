@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { useTheme } from '@/hooks/useTheme';
 import { NavbarProps, MobileMenuProps } from './Navbar.types';
 import Button from '@/components/ui/Button';
+import ThemeAwareLogo from '@/components/ui/ThemeAwareLogo';
 
 const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
   if (!isOpen) return null;
@@ -86,11 +87,7 @@ const Navbar = ({ items, logo, cta, className }: NavbarProps) => {
                 className="flex items-center space-x-3"
                 aria-label="Home"
               >
-                <img
-                  src="/logo/rrm_logo.svg"
-                  alt="RRM DIGITAL"
-                  className="h-16 w-auto"
-                />
+                <ThemeAwareLogo alt="RRM DIGITAL" className="h-16 w-auto" />
               </a>
             )}
           </div>
@@ -152,7 +149,7 @@ const Navbar = ({ items, logo, cta, className }: NavbarProps) => {
                     <svg
                       className={`h-4 w-4 transition-colors duration-200 ${
                         theme === 'light'
-                          ? 'text-[#000525]'
+                          ? 'text-[var(--text-primary)]'
                           : 'text-[var(--accent-primary)]'
                       }`}
                       fill="none"

@@ -13,6 +13,7 @@ import Badge from '@/components/ui/Badge';
 import FloatingElements from '@/components/ui/FloatingElements';
 import GlowBackground from '@/components/ui/GlowBackground';
 import Footer from '@/components/layout/Footer';
+import ThemeAwareSVG from '@/components/ui/ThemeAwareSVG';
 
 // Gallery data - organized by rows with uniform height
 const GALLERY_ROWS = [
@@ -187,11 +188,7 @@ export default function Home() {
 
             {/* SVG Ellipse inside the container, below the button */}
             <div className="mt-16 w-full relative z-30">
-              <img
-                src="/elements/elipse_planet_shape.svg"
-                alt="Planet shape"
-                className="w-full h-auto"
-              />
+              <ThemeAwareSVG className="w-full h-auto" />
             </div>
           </div>
         </div>
@@ -243,7 +240,7 @@ export default function Home() {
                     <p className="font-body mb-4 text-[var(--text-secondary)]">
                       {service.description}
                     </p>
-                    <div className="mb-4">
+                    <div className="mb-8">
                       <ul className="space-y-1">
                         {service.includes.map(item => (
                           <li
@@ -258,9 +255,6 @@ export default function Home() {
                         ))}
                       </ul>
                     </div>
-                    <h5 className="font-body mb-2 text-sm font-medium text-[var(--text-primary)]">
-                      {service.footer}
-                    </h5>
                     <Button
                       variant="secondary"
                       size="md"
@@ -455,26 +449,28 @@ export default function Home() {
 
                 {/* Button */}
                 <div>
-                  <Button
-                    variant="primary"
-                    size="md"
-                    className="group font-body"
-                  >
-                    <span>Connect with us</span>
-                    <svg
-                      className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+                  <a href="#contact">
+                    <Button
+                      variant="primary"
+                      size="md"
+                      className="group font-body"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </Button>
+                      <span>Connect with us</span>
+                      <svg
+                        className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -701,7 +697,7 @@ export default function Home() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
                         />
                       </svg>
                     </Button>
@@ -713,11 +709,7 @@ export default function Home() {
 
           {/* SVG Ellipse inside the container, below the button - same as hero section */}
           <div className="mt-16 w-full relative z-30">
-            <img
-              src="/elements/elipse_planet_shape.svg"
-              alt="Planet shape"
-              className="w-full h-auto"
-            />
+            <ThemeAwareSVG className="w-full h-auto" />
           </div>
         </div>
       </section>
