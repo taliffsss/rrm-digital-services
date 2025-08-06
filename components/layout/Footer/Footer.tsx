@@ -2,14 +2,9 @@
 
 import { cn } from '@/lib/utils';
 import { FooterProps } from './Footer.types';
+import Image from 'next/image';
 
-const Footer = ({
-  sections,
-  logo,
-  description,
-  socialLinks,
-  className,
-}: FooterProps) => {
+const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
   return (
     <footer className={cn('bg-[var(--bg-primary)]', className)}>
       <div className="container py-12 lg:py-16">
@@ -18,9 +13,11 @@ const Footer = ({
           <div className="lg:col-span-4">
             {logo || (
               <div className="flex items-center space-x-3 mb-4">
-                <img
+                <Image
                   src="/logo/rrm_logo.svg"
                   alt="RRM DIGITAL"
+                  width={500}
+                  height={500}
                   className="h-16 w-auto"
                 />
               </div>
@@ -50,8 +47,9 @@ const Footer = ({
                     {section.title}
                   </h5>
                   <ul className="space-y-3">
-                    {section.items.map(item => (
-                      <li key={item.id}>
+                    {section.items.map((item, index) => (
+                      <li key={`${item.href}-${index}`}>
+
                         <a
                           href={item.href}
                           className="font-body text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors flex items-center gap-2"

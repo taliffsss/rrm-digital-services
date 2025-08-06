@@ -13,6 +13,16 @@ import Badge from '@/components/ui/Badge';
 import FloatingElements from '@/components/ui/FloatingElements';
 import GlowBackground from '@/components/ui/GlowBackground';
 import Footer from '@/components/layout/Footer';
+import Image from 'next/image';
+// Icon mapping for services
+const getServiceIcon = (serviceId: number) => {
+  const iconMap: Record<number, string> = {
+    1: '/icon/web_design.svg',
+    2: '/icon/web_development.svg',
+    3: '/icon/graphic_design.svg',
+  };
+  return iconMap[serviceId] || '/icon/default.svg';
+};
 
 // Gallery data - organized by rows with uniform height
 const GALLERY_ROWS = [
@@ -187,10 +197,12 @@ export default function Home() {
 
             {/* SVG Ellipse inside the container, below the button */}
             <div className="mt-16 w-full relative z-30">
-              <img
+              <Image
                 src="/elements/elipse_planet_shape.svg"
                 alt="Planet shape"
                 className="w-full h-auto"
+                width={1200}
+                height={200}
               />
             </div>
           </div>
@@ -233,9 +245,11 @@ export default function Home() {
                   </span>
                   <CardContent className="card-content p-6">
                     <div className="mb-4">
-                      <img
-                        src={service.iconPath}
+                      <Image
+                        src={getServiceIcon(service.id)}
                         alt={service.title}
+                        width={48}
+                        height={48}
                         className="w-12 h-12 service-icon"
                       />
                     </div>
@@ -306,9 +320,11 @@ export default function Home() {
                       key={`work-item-${item.id}`}
                       className={`${getWidthClass(item.width)} group relative overflow-hidden rounded-lg border border-[var(--border-primary)] bg-[var(--bg-card)] hover:border-[var(--accent-primary)] hover:shadow-[0_0_30px_rgba(118,183,20,0.3)] transition-all duration-300 cursor-pointer`}
                     >
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.title}
+                        width={500}
+                        height={500}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
@@ -423,25 +439,33 @@ export default function Home() {
                 <div className="flex flex-col lg:flex-row items-center gap-6">
                   {/* Circular profile images */}
                   <div className="flex -space-x-4">
-                    <img
+                    <Image
                       src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fHww"
                       alt="Team member 1"
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
+                      width={50}
+                      height={50}
                     />
-                    <img
+                    <Image
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
                       alt="Team member 2"
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
+                      width={50}
+                      height={50}
                     />
-                    <img
+                    <Image
                       src="https://images.unsplash.com/photo-1654110455429-cf322b40a906?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
                       alt="Team member 3"
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
+                      width={50}
+                      height={50}
                     />
-                    <img
+                    <Image
                       src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
                       alt="Team member 4"
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
+                      width={50}
+                      height={50}
                     />
                   </div>
 
@@ -564,11 +588,13 @@ export default function Home() {
             </div>
 
             {/* Right column: Regular image with floating rectangles */}
-            <div className="relative flex justify-center items-center h-full mt-8 lg:mt-0 lg:min-h-[500px]">
-              <div className="relative max-w-lg w-full">
-                <img
+            <div className="relative">
+              <div className="relative">
+                <Image
                   src="/images/rrm.png"
                   alt="Team collaboration"
+                  width={500}
+                  height={500}
                   className="w-full h-auto rounded-lg object-cover"
                 />
                 {/* Floating rectangles - always visible with animation */}
