@@ -155,32 +155,34 @@ export default function Home() {
               <span className="block">DIGITAL EXPERIENCES</span>
               <span className="block">That Matters</span>
             </h2>
-            <p className="mt-6 text-sm max-w-2xl leading-8 text-[var(--text-secondary)] sm:text-base mx-auto">
+            <p className="mt-6 text-sm max-w-2xl leading-relaxed text-[var(--text-secondary)] sm:text-base sm:leading-8 mx-auto">
               {HERO_CONTENT.subtitle}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-              <Button
-                size="md"
-                className="group font-body glow-button"
-                style={{
-                  animation: 'float-smooth 3s ease-in-out infinite',
-                }}
-              >
-                {HERO_CONTENT.ctaPrimary}
-                <svg
-                  className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <a href="#contact">
+                <Button
+                  size="md"
+                  className="group font-body glow-button"
+                  style={{
+                    animation: 'float-smooth 3s ease-in-out infinite',
+                  }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </Button>
+                  {HERO_CONTENT.ctaPrimary}
+                  <svg
+                    className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Button>
+              </a>
             </div>
 
             {/* SVG Ellipse inside the container, below the button */}
@@ -256,9 +258,9 @@ export default function Home() {
                         ))}
                       </ul>
                     </div>
-                      <h5 className="font-body mb-2 text-sm font-medium text-[var(--text-primary)]">
-                        {service.footer}
-                      </h5>
+                    <h5 className="font-body mb-2 text-sm font-medium text-[var(--text-primary)]">
+                      {service.footer}
+                    </h5>
                     <Button
                       variant="secondary"
                       size="md"
@@ -350,7 +352,7 @@ export default function Home() {
       <section id="process" className="section">
         <div className="container">
           {/* Two-column layout for title and badges */}
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-16">
+          <div className="flex flex-row items-end gap-8 lg:gap-12 mb-16">
             {/* Left column: Title and badges */}
             <div className="lg:w-auto">
               <h3 className="heading-3 text-left">How We Work</h3>
@@ -370,7 +372,7 @@ export default function Home() {
             </div>
 
             {/* Right column: Solid line */}
-            <div className="lg:flex-1 mt-8 lg:mt-0 flex items-end">
+            <div className="flex-1 flex items-end">
               <div className="h-0.5 w-full bg-[var(--accent-primary)]"></div>
             </div>
           </div>
@@ -414,11 +416,11 @@ export default function Home() {
           </div>
 
           {/* Call to Action Banner */}
-          <div className="mt-16">
+          <div className="mt-12">
             <div className="bg-[var(--bg-card)] rounded-2xl p-8 border border-[var(--border-primary)]">
-              <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-                {/* Left side: Profile images and text */}
-                <div className="flex items-center gap-6">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 text-center lg:text-left">
+                {/* Profile images and text - grouped together */}
+                <div className="flex flex-col lg:flex-row items-center gap-6">
                   {/* Circular profile images */}
                   <div className="flex -space-x-4">
                     <img
@@ -451,7 +453,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Right side: Start Now button */}
+                {/* Button */}
                 <div>
                   <Button
                     variant="primary"
@@ -483,37 +485,87 @@ export default function Home() {
       {/* Team Section */}
       <section id="about" className="section">
         <div className="container">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
+          <div className="grid grid-cols-1 gap-1 lg:grid-cols-2 lg:items-stretch lg:gap-16 min-h-[600px]">
             {/* Left column: Title, badges, and description */}
-            <div>
+            <div className="flex flex-col justify-center">
               <h3 className="heading-3 text-left">Who We Are</h3>
 
               {/* Description */}
-              <div className="mt-8">
-                <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                  At RRM Digital Services, we don&apos;t just build digital products — we bring ideas to life, shape them to perfection, and help them reach the world.
-                </p>
-                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
-                  Render &#45; We turn your vision into working solutions — whether it's a website, an app, or an AI tool. Think of us as the team that brings your digital goals into reality.
-                </p>
-                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
-                  Refine &#45; We believe good is never good enough. From UI/UX to backend performance and campaign strategy, we improve everything through data, testing, and iteration.
-                </p>
-                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
-                  Mobilize &#45; We help businesses grow by launching scalable platforms, activating users, and creating momentum — fast. Whether it's social reach or product adoption, we make things move.
-                </p>
-                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
-                  We're a passionate team of developers, designers, and strategists committed to helping startups and businesses succeed in the digital world.
-                </p>
-                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-4">
-                  RRM Digital Services — we render, refine, and mobilize your success.
+              <div className="mt-4">
+                {/* Three-column layout for Render, Refine, Mobilize */}
+                <div className="mt-8 grid grid-cols-1 gap-3 max-w-4xl">
+                  <Card variant="elevated" className="group relative">
+                    <CardContent className="card-content px-6 py-4 text-left">
+                      <div className="flex items-center gap-5 mb-4">
+                        <img
+                          src="/icon/render.svg"
+                          alt="Render"
+                          className="w-6 h-6"
+                        />
+                        <h4 className="text-[var(--accent-primary)] font-semibold text-xl heading-5">
+                          Render
+                        </h4>
+                      </div>
+                      <p className="font-body text-[var(--text-secondary)] leading-relaxed">
+                        We turn your vision into working solutions — from
+                        websites and apps to AI tools making your digital goals
+                        a reality.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card variant="elevated" className="group relative">
+                    <CardContent className="card-content px-6 py-4 text-left">
+                      <div className="flex items-center gap-5 mb-4">
+                        <img
+                          src="/icon/refine.svg"
+                          alt="Refine"
+                          className="w-6 h-6"
+                        />
+                        <h4 className="text-[var(--accent-primary)] font-semibold text-xl heading-5">
+                          Refine
+                        </h4>
+                      </div>
+                      <p className="font-body text-[var(--text-secondary)] leading-relaxed">
+                        From UI/UX to backend performance and strategy, we
+                        enhance every detail through data, testing, and
+                        iteration.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card variant="elevated" className="group relative">
+                    <CardContent className="card-content px-6 py-4 text-left">
+                      <div className="flex items-center gap-5 mb-4">
+                        <img
+                          src="/icon/mobilize.svg"
+                          alt="Mobilize"
+                          className="w-6 h-6"
+                        />
+                        <h4 className="text-[var(--accent-primary)] font-semibold text-xl heading-5">
+                          Mobilize
+                        </h4>
+                      </div>
+                      <p className="font-body text-[var(--text-secondary)] leading-relaxed">
+                        We launch scalable platforms, engage users, and spark
+                        growth boosting visibility and driving adoption.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-8">
+                  We’re a passionate team of developers, designers, and
+                  strategists dedicated to helping startups and businesses
+                  thrive, at RRM Digital Services, we render, refine, and
+                  mobilize your success.
                 </p>
               </div>
             </div>
 
             {/* Right column: Regular image with floating rectangles */}
-            <div className="relative">
-              <div className="relative">
+            <div className="relative flex justify-center items-center h-full mt-8 lg:mt-0 lg:min-h-[500px]">
+              <div className="relative max-w-lg w-full">
                 <img
                   src="/images/rrm.png"
                   alt="Team collaboration"
@@ -567,7 +619,7 @@ export default function Home() {
 
           {/* Filter Badges */}
           <div className="mt-8 flex justify-center items-center gap-2 sm:gap-3 lg:gap-4 flex-wrap">
-            {['direct', 'simple', 'human'].map((filter, index) => (
+            {['Direct', 'Simple', 'Human'].map((filter, index) => (
               <Badge
                 key={`contact-${filter}-${index}`}
                 size="md"
@@ -583,41 +635,79 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--accent-primary)]/5 to-transparent rounded-2xl pointer-events-none" />
 
             <div className="relative">
-              <p className="font-body text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+              <p className="font-body text-[var(--text-secondary)] leading-relaxed">
                 Have a project in mind? Not sure where to start? Let&apos;s
                 talk. Whether it&apos;s a full build or just a quick
                 consultation, we&apos;re happy to help you figure out the best
-                path forward. We don&apos;t do hard sells — just honest
+                path forward. We don&apos;t do hard sells just honest
                 conversations.
               </p>
-              <div className="mt-6 sm:mt-8">
-                <Button
-                  variant="primary"
-                  size="md"
-                  className="group font-body glow-button w-full sm:w-auto"
-                  style={{
-                    animation: 'float-smooth 3s ease-in-out infinite',
-                  }}
-                >
-                  Send us an email
-                  <svg
-                    className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+
+              {/* Contact Form */}
+              <div className="mt-8 max-w-md mx-auto">
+                <form className="space-y-4">
+                  {/* Name Field */}
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      required
+                      className="w-full px-4 py-3 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] font-body focus:outline-none focus:border-[var(--accent-primary)] transition-colors"
                     />
-                  </svg>
-                </Button>
+                  </div>
+
+                  {/* Email and Contact Number Fields in one row */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      required
+                      className="w-full px-4 py-3 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] font-body focus:outline-none focus:border-[var(--accent-primary)] transition-colors"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Contact Number"
+                      required
+                      className="w-full px-4 py-3 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] font-body focus:outline-none focus:border-[var(--accent-primary)] transition-colors"
+                    />
+                  </div>
+
+                  {/* Message Field */}
+                  <div>
+                    <textarea
+                      placeholder="Message"
+                      rows={4}
+                      required
+                      className="w-full px-4 py-3 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] font-body focus:outline-none focus:border-[var(--accent-primary)] transition-colors resize-none"
+                    />
+                  </div>
+
+                  {/* Send Button */}
+                  <div>
+                    <Button
+                      type="submit"
+                      variant="primary"
+                      size="md"
+                      className="w-full group font-body"
+                    >
+                      Send
+                      <svg
+                        className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                        />
+                      </svg>
+                    </Button>
+                  </div>
+                </form>
               </div>
-              <p className="font-body mt-4 text-xs sm:text-sm text-[var(--text-secondary)]">
-                {CONTACT_CONTENT.responseTime}
-              </p>
             </div>
           </div>
 

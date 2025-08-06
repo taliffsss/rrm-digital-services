@@ -29,7 +29,7 @@ const Footer = ({
               <h3 className="font-body font-semibold text-[var(--text-primary)] mb-2">
                 RRM Digital Services
               </h3>
-              <p className="font-body text-[var(--text-secondary)]">
+              <p className="font-body text-[var(--accent-primary)]">
                 design. code. deliver.
               </p>
             </div>
@@ -61,13 +61,15 @@ const Footer = ({
                           }
                         >
                           {item.icon && (
-                            <span className="text-[var(--accent-primary)] text-base">
+                            <span className="text-[var(--accent-primary)] text-base flex items-center">
                               {item.icon.startsWith('/') ? (
-                                <img
-                                  src={item.icon}
-                                  alt=""
-                                  className="w-4 h-4"
-                                />
+                                <div className="w-5 h-5 flex items-center justify-center">
+                                  <img
+                                    src={item.icon}
+                                    alt=""
+                                    className="w-4 h-4 object-contain"
+                                  />
+                                </div>
                               ) : (
                                 item.icon
                               )}
@@ -88,7 +90,8 @@ const Footer = ({
         <div className="mt-12 pt-8 border-t border-[var(--border-primary)]">
           <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
             <p className="font-body text-sm text-[var(--text-muted)]">
-              RRM Digital Services {new Date().getFullYear()} All Rights Reserved
+              RRM Digital Services {new Date().getFullYear()} All Rights
+              Reserved
             </p>
             <div className="flex space-x-6 text-sm text-[var(--text-muted)]">
               <a

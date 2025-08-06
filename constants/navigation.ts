@@ -3,8 +3,8 @@ import { NavItem, NavSection } from '@/types';
 export const MAIN_NAV_ITEMS: NavItem[] = [
   { id: 1, label: 'Services', href: '#services' },
   { id: 2, label: 'Projects', href: '#work' },
-  { id: 3, label: 'About Us', href: '#about' },
-  { id: 4, label: 'Process', href: '#process' },
+  { id: 3, label: 'Process', href: '#process' },
+  { id: 4, label: 'About Us', href: '#about' },
 ];
 
 export const FOOTER_SECTIONS: NavSection[] = [
@@ -29,7 +29,12 @@ export const FOOTER_SECTIONS: NavSection[] = [
   {
     title: 'Contact',
     items: [
-      { id: 13, label: 'Barangka Drive Mandaluyong City, Philippines', href: '#', icon: '/icon/map-pin.svg' },
+      {
+        id: 13,
+        label: 'Mandaluyong City, Philippines',
+        href: '#',
+        icon: '/icon/map-pin.svg',
+      },
       {
         id: 14,
         label: '+639190950915',

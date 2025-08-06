@@ -3,8 +3,8 @@
 export const HERO_CONTENT = {
   title: 'We Build DIGITAL EXPERIENCES That Matters',
   subtitle:
-    'We craft beautiful, fast, and reliable websites and web apps — tailored to help your business grow, backed by a team that understands your goals.',
-  ctaPrimary: "Connect with us",
+    'We craft beautiful, fast, and reliable websites and web apps tailored to help your business grow, backed by a team that understands your goals.',
+  ctaPrimary: 'Connect with us',
   ctaSecondary: 'Learn More',
 };
 
@@ -20,15 +20,15 @@ export const SERVICES = [
       'UI/UX Design that makes sense',
       'Wireframes that map out great ideas',
       'Clickable prototypes that bring your vision to life',
-      'User research to guide smart design decisions'
+      'User research to guide smart design decisions',
     ],
-    footer: "Let’s explore how your brand can stand out.",
+    footer: "Let's explore how your brand can stand out.",
   },
   {
     id: 2,
     title: 'Web Development',
     description:
-      'Need powerful desktop software? We build cross-platform apps that help your business run better—online or offline.',
+      'Need powerful desktop software? We build cross-platform apps that help your business run better online or offline.',
     icon: '💻',
     iconPath: '/icon/web_development.svg',
     includes: [
@@ -37,12 +37,13 @@ export const SERVICES = [
       'Seamless API integrations',
       'Performance that keeps things fast and reliable',
     ],
-    footer: "Explore how we bring ideas to life online.",
+    footer: 'Explore how we bring ideas to life online.',
   },
   {
     id: 3,
     title: 'Desktop Applications',
-    description: 'Need powerful desktop software? We build cross-platform apps that help your business run better—online or offline.',
+    description:
+      'Need powerful desktop software? We build cross-platform apps that help your business run better online or offline.',
     icon: '🖥️',
     iconPath: '/icon/graphic_design.svg',
     includes: [
@@ -51,7 +52,7 @@ export const SERVICES = [
       'Add offline capabilities when needed',
       'Seamlessly integrate with your existing systems',
     ],
-    footer: "Explore desktop solutions tailored for your workflow.",
+    footer: 'Explore desktop solutions tailored for your workflow.',
   },
 ];
 
@@ -66,28 +67,28 @@ export const PROCESS_STEPS = [
     id: 'discover',
     title: 'Discover',
     description:
-      'We begin with a real conversation — to understand your goals, challenges, and what success looks like for you. No assumptions. Just honest, strategic discovery.',
+      'We begin with a real conversation to understand your goals, challenges, and what success looks like for you. No assumptions. Just honest, strategic discovery.',
     icon: '🔍',
   },
   {
     id: 'design',
     title: 'Design',
     description:
-      'We turn ideas into thoughtful wireframes and sleek UI — always crafted for usability, performance, and real business results.',
+      'We turn ideas into thoughtful wireframes and sleek UI always crafted for usability, performance, and real business results.',
     icon: '✏️',
   },
   {
     id: 'develop',
     title: 'Develop',
     description:
-      'We develop thoughtful, reliable digital solutions that are tailored to your needs — with clean code, smart architecture, and a focus on long-term success.',
+      'We develop thoughtful, reliable digital solutions that are tailored to your needs with clean code, smart architecture, and a focus on long-term success.',
     icon: '⚡',
   },
   {
     id: 'deliver',
     title: 'Deliver',
     description:
-      "We don’t just launch — we stay with you. From testing to deployment and beyond, we support your growth long after go-live.",
+      "We don't just launch we stay with you. From testing to deployment and beyond, we support your growth long after go-live.",
     icon: '🚀',
   },
 ];
