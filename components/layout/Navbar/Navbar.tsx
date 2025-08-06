@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/hooks/useTheme';
 import { NavbarProps, MobileMenuProps } from './Navbar.types';
-import Button from '@/components/ui/Button';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -67,7 +66,7 @@ const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
   );
 };
 
-const Navbar = ({ items, logo, cta, className }: NavbarProps) => {
+const Navbar = ({ items, logo, className }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme, mounted } = useTheme();
 

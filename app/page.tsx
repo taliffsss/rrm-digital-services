@@ -15,13 +15,13 @@ import GlowBackground from '@/components/ui/GlowBackground';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 // Icon mapping for services
-const getServiceIcon = (serviceId: string) => {
-  const iconMap = {
-    design: '/icon/web_design.svg',
-    development: '/icon/web_development.svg',
-    desktop: '/icon/graphic_design.svg',
+const getServiceIcon = (serviceId: number) => {
+  const iconMap: Record<number, string> = {
+    1: '/icon/web_design.svg',
+    2: '/icon/web_development.svg',
+    3: '/icon/graphic_design.svg',
   };
-  return iconMap[serviceId as keyof typeof iconMap] || serviceId;
+  return iconMap[serviceId] || '/icon/default.svg';
 };
 
 // Gallery data - organized by rows with uniform height
@@ -443,21 +443,29 @@ export default function Home() {
                       src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fHww"
                       alt="Team member 1"
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
+                      width={50}
+                      height={50}
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
                       alt="Team member 2"
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
+                      width={50}
+                      height={50}
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1654110455429-cf322b40a906?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
                       alt="Team member 3"
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
+                      width={50}
+                      height={50}
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
                       alt="Team member 4"
                       className="w-12 h-12 rounded-full border-2 border-[var(--bg-primary)] object-cover"
+                      width={50}
+                      height={50}
                     />
                   </div>
 
