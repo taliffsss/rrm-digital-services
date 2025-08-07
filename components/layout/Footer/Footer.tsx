@@ -20,8 +20,8 @@ const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
               <h3 className="font-body font-semibold text-[var(--text-primary)] mb-2">
                 RRM Digital Services
               </h3>
-              <p className="font-body text-[var(--accent-primary)]">
-                design. code. deliver.
+              <p className="font-body text-xs text-[var(--accent-primary)]">
+                We render, refine, and mobilize your success.
               </p>
             </div>
             {socialLinks && <div className="flex space-x-4">{socialLinks}</div>}

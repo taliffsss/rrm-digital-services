@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { useTheme } from '@/hooks/useTheme';
 import { NavbarProps, MobileMenuProps } from './Navbar.types';
 import Link from 'next/link';
+import Button from '@/components/ui/Button';
 import ThemeAwareLogo from '@/components/ui/ThemeAwareLogo';
 
 const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
@@ -66,7 +67,7 @@ const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
   );
 };
 
-const Navbar = ({ items, logo, className }: NavbarProps) => {
+const Navbar = ({ items, cta, logo, className }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme, mounted } = useTheme();
 
@@ -107,6 +108,16 @@ const Navbar = ({ items, logo, className }: NavbarProps) => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
+            {/* CTA Button */}
+            {cta || (
+              <a href="#contact">
+                <div className="hidden lg:block">
+                  <Button variant="primary" size="sm" className="font-body">
+                    Connect with us!
+                  </Button>
+                </div>
+              </a>
+            )}
             {/* Theme Toggle */}
             {mounted && (
               <button

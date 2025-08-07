@@ -3,7 +3,7 @@ import { NavItem, NavSection } from '@/types';
 export const MAIN_NAV_ITEMS: NavItem[] = [
   { id: 1, label: 'Services', href: '#services' },
   { id: 2, label: 'Projects', href: '#work' },
-  { id: 3, label: 'Process', href: '#process' },
+  { id: 3, label: 'How We Work', href: '#process' },
   { id: 4, label: 'About Us', href: '#about' },
 ];
 
@@ -21,9 +21,9 @@ export const FOOTER_SECTIONS: NavSection[] = [
     title: 'Company',
     items: [
       { id: 9, label: 'About Us', href: '#about' },
-      { id: 10, label: 'Our Process', href: '#process' },
-      { id: 11, label: 'Case Studies', href: '#work' },
-      { id: 12, label: 'Contact', href: '#contact' },
+      { id: 10, label: 'How We Work', href: '#process' },
+      { id: 11, label: 'Projects', href: '#work' },
+      { id: 12, label: 'Services', href: '#services' },
     ],
   },
   {
