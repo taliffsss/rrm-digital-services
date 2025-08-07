@@ -88,7 +88,10 @@ const Navbar = ({ items, cta, logo, className }: NavbarProps) => {
                 className="flex items-center space-x-3"
                 aria-label="Home"
               >
-                <ThemeAwareLogo alt="RRM Digital Services" className="h-16 w-auto" />
+                <ThemeAwareLogo
+                  alt="RRM Digital Services"
+                  className="h-16 w-auto"
+                />
               </Link>
             )}
           </div>
@@ -122,7 +125,7 @@ const Navbar = ({ items, cta, logo, className }: NavbarProps) => {
             {mounted && (
               <button
                 onClick={toggleTheme}
-                className="relative flex items-center rounded-full border border-[var(--border-primary)] p-1 w-20 h-10 transition-all duration-200 hover:border-[var(--border-accent)]"
+                className="cursor-pointer relative flex items-center rounded-full border border-[var(--border-primary)] p-1 w-20 h-10 transition-all duration-200 hover:border-[var(--border-accent)]"
                 aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
               >
                 {/* Sliding Background */}

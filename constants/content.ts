@@ -22,7 +22,7 @@ export const SERVICES = [
       'Clickable prototypes that bring your vision to life',
       'User research to guide smart design decisions',
     ],
-    footer: "Let’s explore how your brand can stand out.",
+    footer: 'Let’s explore how your brand can stand out.',
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const SERVICES = [
       'Seamless API integrations',
       'Performance that keeps things fast and reliable',
     ],
-    footer: "Explore how we bring ideas to life online.",
+    footer: 'Explore how we bring ideas to life online.',
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ export const SERVICES = [
       'Add offline capabilities when needed',
       'Seamlessly integrate with your existing systems',
     ],
-    footer: "Explore desktop solutions tailored for your workflow.",
+    footer: 'Explore desktop solutions tailored for your workflow.',
   },
 ];
 

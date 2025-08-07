@@ -49,5 +49,14 @@ export default function ThemeAwareSVG({
     return () => observer.disconnect();
   }, []);
 
-  return <Image src={svgPath} alt={alt} width={1200} height={200} className={className} loading="eager" />;
+  return (
+    <Image
+      src={svgPath}
+      alt={alt}
+      width={1200}
+      height={200}
+      className={className}
+      loading="eager"
+    />
+  );
 }
