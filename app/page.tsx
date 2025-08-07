@@ -543,6 +543,8 @@ export default function Home() {
                           src="/icon/render.svg"
                           alt="Render"
                           className="w-6 h-6"
+                          width={50}
+                          height={50}
                         />
                         <h4 className="text-[var(--accent-primary)] font-semibold text-xl heading-5">
                           Render
