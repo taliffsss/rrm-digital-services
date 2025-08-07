@@ -34,7 +34,6 @@ fi
 echo "🔧 Setting up pre-commit hook..."
 cat > .husky/pre-commit << 'EOF'
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
 
 npm run format
 npm run type-check
