@@ -212,18 +212,6 @@ export default function Home() {
                 </Button>
               </a>
             </div>
-
-            {/* SVG Ellipse inside the container, below the button */}
-            <div className="mt-16 w-full relative z-30">
-              <Image
-                src="/elements/elipse_planet_shape.svg"
-                alt="Planet shape"
-                className="w-full h-auto"
-                width={1200}
-                height={200}
-                loading="eager"
-              />
-            </div>
           </div>
         </div>
       </section>

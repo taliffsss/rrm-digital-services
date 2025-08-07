@@ -3,7 +3,7 @@
 export const HERO_CONTENT = {
   title: 'We Build DIGITAL EXPERIENCES That Matters',
   subtitle:
-    'We craft beautiful, fast, and reliable websites and web apps tailored to help your business grow, backed by a team that understands your goals.',
+    'We create stunning, high-performance websites and apps that bring your vision to life and drive business growth.',
   ctaPrimary: 'Connect with us',
   ctaSecondary: 'Learn More',
 };

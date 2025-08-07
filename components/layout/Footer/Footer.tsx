@@ -20,7 +20,7 @@ const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
               <h3 className="font-body font-semibold text-[var(--text-primary)] mb-2">
                 RRM Digital Services
               </h3>
-              <p className="font-body text-xs text-[var(--accent-primary)]">
+              <p className="font-body text-xs text-[var(--text-primary)]">
                 We render, refine, and mobilize your success.
               </p>
             </div>
@@ -80,11 +80,11 @@ const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-[var(--border-primary)]">
           <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
-            <p className="font-body text-sm text-[var(--text-muted)]">
+            <p className="font-body text-sm text-[var(--text-primary)]">
               RRM Digital Services {new Date().getFullYear()} All Rights
               Reserved
             </p>
-            <div className="flex space-x-6 text-sm text-[var(--text-muted)]">
+            <div className="flex space-x-6 text-sm text-[var(--text-primary)]">
               <a
                 href="/privacy"
                 className="font-body hover:text-[var(--text-primary)] transition-colors"

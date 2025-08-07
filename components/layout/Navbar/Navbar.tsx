@@ -88,7 +88,7 @@ const Navbar = ({ items, cta, logo, className }: NavbarProps) => {
                 className="flex items-center space-x-3"
                 aria-label="Home"
               >
-                <ThemeAwareLogo alt="RRM DIGITAL" className="h-16 w-auto" />
+                <ThemeAwareLogo alt="RRM Digital Services" className="h-16 w-auto" />
               </Link>
             )}
           </div>

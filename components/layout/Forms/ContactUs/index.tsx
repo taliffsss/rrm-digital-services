@@ -64,8 +64,6 @@ const ContactUs: React.FC<ContactUsProps> = ({
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      // Simulate API call - replace with your actual API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1000));
       
       // Success handling
       setSubmitStatus({
