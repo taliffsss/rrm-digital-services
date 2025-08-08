@@ -54,6 +54,21 @@ export const SERVICES = [
     ],
     footer: 'Explore desktop solutions tailored for your workflow.',
   },
+  {
+    id: 4,
+    title: 'Web Hosting',
+    description:
+      'Fast, secure, and scalable hosting solutions to keep your website running smoothly—no matter the traffic.',
+    icon: '🌐',
+    iconPath: '/icon/web_hosting.svg',
+    includes: [
+      'Blazing-fast load times with global CDN',
+      '99.9% uptime guarantee for peace of mind',
+      'Scalable infrastructure to handle growth',
+      'Daily backups and strong security measures',
+    ],
+    footer: 'Let’s host your project with performance and reliability.',
+  },
 ];
 
 export const WORK_FILTERS = [
