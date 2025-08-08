@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
+import { Formik, Form, Field, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import Button from '@/components/ui/Button';
 
@@ -42,7 +42,7 @@ const initialValues: ContactFormData = {
 
 interface ContactUsProps {
   onSubmitSuccess?: (data: ContactFormData) => void;
-  onSubmitError?: (error: any) => void;
+  onSubmitError?: (error: unknown) => void;
 }
 
 const ContactUs: React.FC<ContactUsProps> = ({
@@ -64,25 +64,22 @@ const ContactUs: React.FC<ContactUsProps> = ({
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      // Simulate API call - replace with your actual API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      
       // Success handling
       setSubmitStatus({
         type: 'success',
         message: 'Thank you! Your message has been sent successfully.',
       });
-      
+
       resetForm();
       onSubmitSuccess?.(values);
-      
     } catch (error) {
       // Error handling
       setSubmitStatus({
         type: 'error',
-        message: 'Sorry, there was an error sending your message. Please try again.',
+        message:
+          'Sorry, there was an error sending your message. Please try again.',
       });
-      
+
       onSubmitError?.(error);
     } finally {
       setIsSubmitting(false);
@@ -140,7 +137,7 @@ const ContactUs: React.FC<ContactUsProps> = ({
                   }`}
                 />
               </div>
-              
+
               <div>
                 <Field
                   type="tel"

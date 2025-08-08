@@ -1,12 +1,73 @@
-/* Theme imports - must come first */
+/* Import Tailwind v4 */
+@import 'tailwindcss';
+
+/* Define theme tokens for Tailwind v4 */
+@theme {
+  /* Color tokens that map to your CSS variables */
+  --color-border: var(--border-primary);
+  --color-input: var(--border-primary);
+  --color-ring: var(--accent-primary);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+
+  --color-primary: var(--accent-primary);
+  --color-primary-foreground: var(--text-inverse);
+
+  --color-secondary: var(--bg-secondary);
+  --color-secondary-foreground: var(--text-secondary);
+
+  --color-destructive: var(--accent-error);
+  --color-destructive-foreground: var(--text-inverse);
+
+  --color-muted: var(--bg-secondary);
+  --color-muted-foreground: var(--text-muted);
+
+  --color-accent: var(--bg-tertiary);
+  --color-accent-foreground: var(--text-primary);
+
+  --color-popover: var(--bg-card);
+  --color-popover-foreground: var(--text-primary);
+
+  --color-card: var(--bg-card);
+  --color-card-foreground: var(--text-primary);
+
+  /* Radius tokens */
+  --radius: 0.5rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Font family tokens - Tailwind v4 syntax */
+  --font-family-sans: var(--font-poppins), system-ui, sans-serif;
+  --font-family-serif:
+    ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-family-mono:
+    ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo,
+    monospace;
+}
+
+/* Define custom utilities using @utility */
+@utility font-title {
+  font-family: var(--font-orbitron), monospace;
+}
+
+@utility font-body {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+@utility font-orbitron {
+  font-family: var(--font-orbitron), monospace;
+}
+
+@utility font-poppins {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+/* Theme imports - must come after @theme */
 @import '../styles/themes/light.css';
 @import '../styles/themes/dark.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Base styles */
+/* Base styles - Keep all your original styles */
 @layer base {
   :root {
     /* Border radius - Global design token */
@@ -98,7 +159,7 @@
   }
 }
 
-/* Component styles */
+/* Component styles - Keep all your original styles */
 @layer components {
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8;
@@ -151,14 +212,14 @@
   }
 }
 
-/* Utility styles */
+/* Utility styles - Keep all your original styles */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
-/* Floating Elements Animations */
+/* Floating Elements Animations - Keep all your original animations */
 @keyframes floatUp-straight-up {
   0% {
     transform: translateY(0) translateX(0) scale(0.8);
@@ -285,7 +346,7 @@
   }
 }
 
-/* Glow Button Effect */
+/* Glow Button Effect - Keep all your original effects */
 .glow-button {
   box-shadow:
     0 0 20px rgba(118, 183, 20, 0.6),
@@ -301,7 +362,7 @@
     0 0 75px rgba(118, 183, 20, 0.3);
 }
 
-/* Card Hover Effect - Adapted from CodePen */
+/* Card Hover Effect - Keep all your original card effects */
 .card-effect {
   position: relative;
   transition: all 0.5s ease;
@@ -500,7 +561,7 @@
   }
 }
 
-/* Service Icons Styling */
+/* Service Icons Styling - Keep all your original icon styles */
 .service-icon {
   filter: brightness(0) saturate(100%) invert(1);
   transition: filter 0.3s ease;

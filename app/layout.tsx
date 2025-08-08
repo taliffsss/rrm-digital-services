@@ -19,32 +19,36 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'RRM DIGITAL - Building Digital Experiences That Matter',
+  title: 'RRM Digital Services | Future-Ready Websites, Apps & AI Solutions',
   description:
-    'We create elegant, high-performing websites and web applications. Specializing in UI/UX design, full-stack development, and digital transformation.',
-  keywords: [
-    'Web Design',
-    'Web Development',
-    'UI/UX Design',
-    'Digital Agency',
-    'Full-stack Development',
-  ],
-  authors: [{ name: 'RRM DIGITAL' }],
-  creator: 'RRM DIGITAL',
+    'At RRM Digital Services, we render, refine, and mobilize your success. We design stunning websites, build powerful apps, and create AI solutions that turn ideas into reality, refine them for peak performance, and launch them for growth.',
+  keywords:
+    'RRM Digital Services, web development, app development, AI solutions, UI/UX design, scalable platforms, digital strategy, business growth, startup solutions, backend optimization, campaign strategy, future-ready technology, software development agency',
+  authors: [{ name: 'RRM Digital Services' }],
+  creator: 'RRM Digital Services',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://rrmdigital.com',
-    title: 'RRM DIGITAL - Building Digital Experiences That Matter',
+    title: 'RRM Digital Services | Future-Ready Websites, Apps & AI Solutions',
     description:
-      'We create elegant, high-performing websites and web applications. Specializing in UI/UX design, full-stack development, and digital transformation.',
-    siteName: 'RRM DIGITAL',
+      'We turn ideas into reality, refine them for perfection, and mobilize them for growth. Websites, apps, and AI tools for startups and businesses.',
+    siteName: 'RRM Digital Services',
+    images: [
+      {
+        url: 'https://rrmdigital.com/og-image.jpg', // Replace with your OG image
+        width: 1200,
+        height: 630,
+        alt: 'RRM Digital Services - Future-Ready Websites, Apps & AI Solutions',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RRM DIGITAL - Building Digital Experiences That Matter',
+    title: 'RRM Digital Services | Future-Ready Websites, Apps & AI Solutions',
     description:
-      'We create elegant, high-performing websites and web applications. Specializing in UI/UX design, full-stack development, and digital transformation.',
+      'We turn ideas into reality, refine them for perfection, and mobilize them for growth. Websites, apps, and AI tools for startups and businesses.',
+    images: ['https://rrmdigital.com/og-image.jpg'], // Replace with your Twitter image
   },
   robots: {
     index: true,
@@ -58,7 +62,6 @@ export const metadata: Metadata = {
     },
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{

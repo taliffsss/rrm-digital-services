@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface ThemeAwareSVGProps {
   className?: string;
@@ -48,5 +49,14 @@ export default function ThemeAwareSVG({
     return () => observer.disconnect();
   }, []);
 
-  return <img src={svgPath} alt={alt} className={className} />;
+  return (
+    <Image
+      src={svgPath}
+      alt={alt}
+      width={1200}
+      height={200}
+      className={className}
+      loading="eager"
+    />
+  );
 }

@@ -153,14 +153,14 @@ const getWidthClass = (width: string) => {
 
 export default function Home() {
   // Handle successful form submission
-  const handleContactSuccess = (data: any) => {
+  const handleContactSuccess = (data: unknown) => {
     console.log('Contact form submitted successfully:', data);
     // You can add additional success handling here
     // For example: send analytics event, show toast notification, etc.
   };
 
   // Handle form submission error
-  const handleContactError = (error: any) => {
+  const handleContactError = (error: unknown) => {
     console.error('Contact form submission failed:', error);
     // You can add additional error handling here
     // For example: send error to monitoring service, show fallback options, etc.
@@ -211,18 +211,6 @@ export default function Home() {
                   </svg>
                 </Button>
               </a>
-            </div>
-
-            {/* SVG Ellipse inside the container, below the button */}
-            <div className="mt-16 w-full relative z-30">
-              <Image
-                src="/elements/elipse_planet_shape.svg"
-                alt="Planet shape"
-                className="w-full h-auto"
-                width={1200}
-                height={200}
-                loading="eager"
-              />
             </div>
           </div>
         </div>
@@ -379,7 +367,7 @@ export default function Home() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-                </Button>
+              </Button>
             </div>
           </div>
         </div>
@@ -497,7 +485,7 @@ export default function Home() {
                   {/* Text */}
                   <div>
                     <h5 className="font-body text-[var(--text-primary)]">
-                      Align with Businesses that Choose Quality
+                      Build with Teams That Don&apos;t Compromise on Quality
                     </h5>
                   </div>
                 </div>
@@ -542,24 +530,30 @@ export default function Home() {
               {/* Description */}
               <div className="mt-4">
                 <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                  At RRM Digital Services, we don't just build digital products — we bring ideas to life, shape them to perfection, and help them reach the world.
+                  At RRM Digital Services, we don&apos;t just build digital
+                  products — we bring ideas to life, shape them to perfection,
+                  and help them reach the world.
                 </p>
                 {/* Three-column layout for Render, Refine, Mobilize */}
                 <div className="mt-8 grid grid-cols-1 gap-3 max-w-4xl">
                   <Card variant="elevated" className="group relative">
                     <CardContent className="card-content px-6 py-4 text-left">
                       <div className="flex items-center gap-5 mb-4">
-                        <img
+                        <Image
                           src="/icon/render.svg"
                           alt="Render"
                           className="w-6 h-6"
+                          width={50}
+                          height={50}
                         />
                         <h4 className="text-[var(--accent-primary)] font-semibold text-xl heading-5">
                           Render
                         </h4>
                       </div>
                       <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                        We turn your vision into working solutions — whether it's a website, an app, or an AI tool. Think of us as the team that brings your digital goals into reality.
+                        We turn your vision into working solutions — whether
+                        it&apos;s a website, an app, or an AI tool. Think of us
+                        as the team that brings your digital goals into reality.
                       </p>
                     </CardContent>
                   </Card>
@@ -577,7 +571,9 @@ export default function Home() {
                         </h4>
                       </div>
                       <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                        We believe good is never good enough. From UI/UX to backend performance and campaign strategy, we improve everything through data, testing, and iteration.
+                        We believe good is never good enough. From UI/UX to
+                        backend performance and campaign strategy, we improve
+                        everything through data, testing, and iteration.
                       </p>
                     </CardContent>
                   </Card>
@@ -595,17 +591,24 @@ export default function Home() {
                         </h4>
                       </div>
                       <p className="font-body text-[var(--text-secondary)] leading-relaxed">
-                        We help businesses grow by launching scalable platforms, activating users, and creating momentum — fast. Whether it's social reach or product adoption, we make things move.
+                        We help businesses grow by launching scalable platforms,
+                        activating users, and creating momentum — fast. Whether
+                        it&apos;s social reach or product adoption, we make
+                        things move.
                       </p>
                     </CardContent>
                   </Card>
                 </div>
 
                 <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-8">
-                  We're a creative and driven team of developers, designers, and strategists focused on building future-ready solutions that help startups and businesses grow and succeed in the digital age.
+                  We&apos;re a creative and driven team of developers,
+                  designers, and strategists focused on building future-ready
+                  solutions that help startups and businesses grow and succeed
+                  in the digital age.
                 </p>
                 <p className="font-body text-[var(--text-secondary)] leading-relaxed mt-8">
-                  RRM Digital Services — we render, refine, and mobilize your success.
+                  RRM Digital Services — we render, refine, and mobilize your
+                  success.
                 </p>
               </div>
             </div>
@@ -673,7 +676,7 @@ export default function Home() {
 
             <div className="relative">
               {/* Contact Form - Now using the ContactUs component */}
-              <ContactUs 
+              <ContactUs
                 onSubmitSuccess={handleContactSuccess}
                 onSubmitError={handleContactError}
               />

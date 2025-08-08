@@ -9,7 +9,7 @@ interface ThemeAwareLogoProps {
 
 export default function ThemeAwareLogo({
   className = '',
-  alt = 'RRM DIGITAL',
+  alt = 'RRM DIGITAL Services',
 }: ThemeAwareLogoProps) {
   const [logoPath, setLogoPath] = useState('/logo/rrm_logo_dark.svg');
 

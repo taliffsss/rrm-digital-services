@@ -3,7 +3,7 @@
 export const HERO_CONTENT = {
   title: 'We Build DIGITAL EXPERIENCES That Matters',
   subtitle:
-    'We craft beautiful, fast, and reliable websites and web apps tailored to help your business grow, backed by a team that understands your goals.',
+    'We create stunning, high-performance websites and apps that bring your vision to life and drive business growth.',
   ctaPrimary: 'Connect with us',
   ctaSecondary: 'Learn More',
 };
@@ -22,7 +22,7 @@ export const SERVICES = [
       'Clickable prototypes that bring your vision to life',
       'User research to guide smart design decisions',
     ],
-    footer: "Let’s explore how your brand can stand out.",
+    footer: 'Let’s explore how your brand can stand out.',
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const SERVICES = [
       'Seamless API integrations',
       'Performance that keeps things fast and reliable',
     ],
-    footer: "Explore how we bring ideas to life online.",
+    footer: 'Explore how we bring ideas to life online.',
   },
   {
     id: 3,
@@ -52,10 +52,24 @@ export const SERVICES = [
       'Add offline capabilities when needed',
       'Seamlessly integrate with your existing systems',
     ],
-    footer: "Explore desktop solutions tailored for your workflow.",
+    footer: 'Explore desktop solutions tailored for your workflow.',
+  },
+  {
+    id: 4,
+    title: 'Web Hosting',
+    description:
+      'Fast, secure, and scalable hosting solutions to keep your website running smoothly—no matter the traffic.',
+    icon: '🌐',
+    iconPath: '/icon/web_hosting.svg',
+    includes: [
+      'Blazing-fast load times with global CDN',
+      '99.9% uptime guarantee for peace of mind',
+      'Scalable infrastructure to handle growth',
+      'Daily backups and strong security measures',
+    ],
+    footer: 'Let’s host your project with performance and reliability.',
   },
 ];
-
 export const WORK_FILTERS = [
   { id: 'all', label: 'Real' },
   { id: 'recent', label: 'Tested' },
