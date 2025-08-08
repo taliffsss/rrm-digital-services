@@ -1,0 +1,59 @@
+/* Dark Theme */
+[data-theme='dark'] {
+  /* Background colors */
+  --bg-primary: #000525;
+  --bg-secondary: #000525;
+  --bg-tertiary: #000525;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --bg-mobile-menu: rgba(0, 5, 37, 0.4);
+  --border-mobile-menu: rgba(255, 255, 255, 0.1);
+  --bg-form-field: rgba(255, 255, 255, 0.1);
+
+  /* Text colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  /* Border colors */
+  --border-primary: #2a2a4a;
+  --border-secondary: #3a3a5a;
+  --border-accent: #95df21;
+
+  /* Accent colors - New green theme */
+  --accent-primary: #95df21;
+  --accent-secondary: #7bc91a;
+  --accent-success: #95df21;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
+
+  /* Button colors */
+  --btn-primary-bg: #95df21;
+  --btn-primary-text: #000525;
+  --btn-primary-hover: #7bc91a;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-text: #95df21;
+  --btn-secondary-hover: rgba(149, 223, 33, 0.1);
+  --btn-ghost-bg: transparent;
+  --btn-ghost-text: #cbd5e1;
+  --btn-ghost-hover: #1a1a3a;
+  --btn-hero-bg: #95df21;
+
+  /* Border radius */
+  --radius: 0.5rem;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+
+  /* Card shadows - no shadows in dark mode */
+  --card-shadow: none;
+  --card-shadow-hover: none;
+}
