@@ -70,7 +70,6 @@ export const SERVICES = [
     footer: 'Let’s host your project with performance and reliability.',
   },
 ];
-
 export const WORK_FILTERS = [
   { id: 'all', label: 'Real' },
   { id: 'recent', label: 'Tested' },
