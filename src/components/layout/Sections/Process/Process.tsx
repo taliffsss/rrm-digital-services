@@ -122,7 +122,11 @@ export default function ProcessSection({ className }: ProcessProps) {
 
               {/* Button */}
               <div>
-                <Button variant="primary" size="md" className="group font-body">
+                <Button
+                  variant="primary"
+                  size="md"
+                  className="group font-body cursor-pointer"
+                >
                   <span>Connect with us</span>
                   <svg
                     className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"

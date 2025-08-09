@@ -87,8 +87,8 @@ export const SERVICES = [
 ];
 export const WORK_FILTERS = [
   { id: 'all', label: 'Real' },
-  { id: 'recent', label: 'Tested' },
   { id: 'delivered', label: 'Delivered' },
+  { id: 'recent', label: 'Tested' },
 ];
 
 export const PROCESS_STEPS = [

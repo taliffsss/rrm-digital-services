@@ -186,7 +186,11 @@ const Navbar = ({ items, cta, logo, className }: NavbarProps) => {
                 {cta || (
                   <a href="#contact">
                     <div className="hidden lg:block">
-                      <Button variant="primary" size="sm" className="font-body">
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        className="font-body cursor-pointer"
+                      >
                         Connect with us!
                       </Button>
                     </div>

@@ -81,7 +81,7 @@ export default function ServicesSection({ className }: ServicesProps) {
                   <Button
                     variant="secondary"
                     size="md"
-                    className="w-full font-body transition-all duration-300 group-hover:bg-[var(--btn-primary-bg)] group-hover:text-[var(--btn-primary-text)] group-hover:border-[var(--btn-primary-bg)]"
+                    className="cursor-pointer w-full font-body transition-all duration-300 group-hover:bg-[var(--btn-primary-bg)] group-hover:text-[var(--btn-primary-text)] group-hover:border-[var(--btn-primary-bg)]"
                   >
                     Explore
                   </Button>

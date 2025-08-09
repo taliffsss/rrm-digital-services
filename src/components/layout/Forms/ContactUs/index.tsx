@@ -142,7 +142,7 @@ const ContactUs: React.FC<ContactUsProps> = ({
                 <Field
                   type="tel"
                   name="contactNumber"
-                  placeholder="Contact Number"
+                  placeholder="Contact No"
                   className={`w-full px-4 py-3 bg-[var(--bg-form-field)] backdrop-blur-sm border rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] font-body focus:outline-none transition-colors ${
                     errors.contactNumber && touched.contactNumber
                       ? 'border-red-500 focus:border-red-400'
@@ -173,7 +173,7 @@ const ContactUs: React.FC<ContactUsProps> = ({
                 type="submit"
                 variant="primary"
                 size="md"
-                className="w-full group font-body disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full group font-body disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
                 disabled={formikSubmitting || isSubmitting}
               >
                 {isSubmitting ? (
