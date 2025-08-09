@@ -1,17 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import Button from '@/components/ui/Button';
-
-// Form data interface
-interface ContactFormData {
-  name: string;
-  email: string;
-  contactNumber: string;
-  message: string;
-}
+import { useContactSubmission } from '@/hooks/useContact';
+import { ContactFormData } from '@/types/contact';
 
 // Validation schema using Yup
 const validationSchema = Yup.object({
@@ -49,42 +43,39 @@ const ContactUs: React.FC<ContactUsProps> = ({
   onSubmitSuccess,
   onSubmitError,
 }) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
-    message: string;
-  }>({ type: null, message: '' });
+  const contactMutation = useContactSubmission();
 
   // Handle form submission
   const handleSubmit = async (
     values: ContactFormData,
-    { setSubmitting, resetForm }: FormikHelpers<ContactFormData>
+    { setSubmitting, resetForm, setStatus }: FormikHelpers<ContactFormData>
   ) => {
-    setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: '' });
+    setStatus(null);
 
-    try {
-      // Success handling
-      setSubmitStatus({
-        type: 'success',
-        message: 'Thank you! Your message has been sent successfully.',
-      });
-
-      resetForm();
-      onSubmitSuccess?.(values);
-    } catch (error) {
-      // Error handling
-      setSubmitStatus({
-        type: 'error',
-        message:
-          'Sorry, there was an error sending your message. Please try again.',
-      });
-
-      onSubmitError?.(error);
-    } finally {
-      setIsSubmitting(false);
-      setSubmitting(false);
-    }
+    contactMutation.mutate(values, {
+      onSuccess: response => {
+        setStatus({
+          type: 'success',
+          message:
+            response.message ||
+            'Thank you! Your message has been sent successfully.',
+        });
+        resetForm();
+        onSubmitSuccess?.(values);
+      },
+      onError: error => {
+        setStatus({
+          type: 'error',
+          message:
+            error.message ||
+            'Sorry, there was an error sending your message. Please try again.',
+        });
+        onSubmitError?.(error);
+      },
+      onSettled: () => {
+        setSubmitting(false);
+      },
+    });
   };
 
   return (
@@ -94,18 +85,18 @@ const ContactUs: React.FC<ContactUsProps> = ({
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ isSubmitting: formikSubmitting, errors, touched }) => (
+        {({ isSubmitting, errors, touched, status }) => (
           <Form className="space-y-4">
             {/* Status Message */}
-            {submitStatus.type && (
+            {status && (
               <div
                 className={`p-3 rounded-lg text-sm font-body ${
-                  submitStatus.type === 'success'
+                  status.type === 'success'
                     ? 'bg-green-500/20 text-green-400 border border-green-500/30'
                     : 'bg-red-500/20 text-red-400 border border-red-500/30'
                 }`}
               >
-                {submitStatus.message}
+                {status.message}
               </div>
             )}
 
@@ -174,9 +165,9 @@ const ContactUs: React.FC<ContactUsProps> = ({
                 variant="primary"
                 size="md"
                 className="w-full group font-body disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
-                disabled={formikSubmitting || isSubmitting}
+                disabled={isSubmitting || contactMutation.isPending}
               >
-                {isSubmitting ? (
+                {contactMutation.isPending ? (
                   <>
                     <svg
                       className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"

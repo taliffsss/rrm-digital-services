@@ -30,7 +30,7 @@ export default function HeroSection({ className }: HeroProps) {
             <a href="#contact">
               <Button
                 size="md"
-                className="group font-body glow-button bg-[var(--btn-hero-bg)] hover:bg-[var(--btn-hero-bg)]"
+                className="cursor-pointer group font-body glow-button bg-[var(--btn-hero-bg)] hover:bg-[var(--btn-hero-bg)]"
                 style={{
                   animation: 'float-smooth 3s ease-in-out infinite',
                 }}
