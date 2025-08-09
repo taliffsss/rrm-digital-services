@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Orbitron, Poppins } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
-import { ThemeProvider } from '@/components/providers';
+import { ThemeProvider, QueryProvider } from '@/components/providers';
 import { MAIN_NAV_ITEMS } from '@/constants/navigation';
 
 const orbitron = Orbitron({
@@ -70,10 +70,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${orbitron.variable} ${poppins.variable} antialiased`}>
-        <ThemeProvider>
-          <Navbar items={MAIN_NAV_ITEMS} />
-          <main className="min-h-screen">{children}</main>
-        </ThemeProvider>
+        <QueryProvider>
+          <ThemeProvider>
+            <Navbar items={MAIN_NAV_ITEMS} />
+            <main className="min-h-screen">{children}</main>
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   );
