@@ -11,11 +11,9 @@ export const HERO_CONTENT = {
 export const SERVICES = [
   {
     id: 1,
-    title: 'Web & Mobile Design',
+    title: 'UI UX Design',
     description:
       'Crafting beautiful, user-friendly designs that feel natural and easy to use. We make sure your users enjoy every interaction.',
-    icon: '🎨',
-    iconPath: '/icon/web_design.svg',
     includes: [
       'UI/UX Design that makes sense',
       'Wireframes that map out great ideas',
@@ -29,8 +27,6 @@ export const SERVICES = [
     title: 'Web Development',
     description:
       'Need powerful desktop software? We build cross-platform apps that help your business run better online or offline.',
-    icon: '💻',
-    iconPath: '/icon/web_development.svg',
     includes: [
       'Frontend that looks good and feels right',
       'Backend that powers everything smoothly',
@@ -44,8 +40,6 @@ export const SERVICES = [
     title: 'Desktop Applications',
     description:
       'Need powerful desktop software? We build cross-platform apps that help your business run better online or offline.',
-    icon: '🖥️',
-    iconPath: '/icon/web_development.svg',
     includes: [
       'Develop apps that work on Windows & Mac',
       'Ensure native-like speed and feel',
@@ -59,8 +53,6 @@ export const SERVICES = [
     title: 'Web Hosting',
     description:
       'Fast, secure, and scalable hosting solutions to keep your website running smoothly—no matter the traffic.',
-    icon: '🌐',
-    iconPath: '/icon/web_hosting.svg',
     includes: [
       'Blazing-fast load times with global CDN',
       '99.9% uptime guarantee for peace of mind',
@@ -74,8 +66,6 @@ export const SERVICES = [
     title: 'Graphic Design',
     description:
       "Creating bold visuals and designs that speak your brand's story. From logos to campaigns, we make every pixel work with purpose.",
-    icon: '🎨',
-    iconPath: '/icon/graphic_design.svg',
     includes: [
       'Brand identities that leave a lasting impression',
       'Custom illustrations and eye-catching visuals',

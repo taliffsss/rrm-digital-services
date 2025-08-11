@@ -162,103 +162,130 @@
 @layer components {
   .container {
     @apply mx-auto w-full;
-    /* Enhanced responsive padding system */
-    padding-left: 1rem; /* 16px on mobile */
-    padding-right: 1rem;
+    /* Enhanced responsive padding system - Reduced */
+    padding-left: 0.75rem; /* 12px on mobile - reduced from 16px */
+    padding-right: 0.75rem;
     max-width: 1280px; /* Increased from 1200px for better space utilization */
   }
 
-  /* Responsive padding breakpoints */
+  /* Responsive padding breakpoints - Reduced */
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px on small screens */
+      padding-left: 1rem; /* 16px on small screens - reduced from 24px */
+      padding-right: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 1.5rem; /* 24px on medium screens - reduced from 32px */
       padding-right: 1.5rem;
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px on medium screens */
+      padding-left: 2rem; /* 32px on large screens - reduced from 40px */
       padding-right: 2rem;
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     .container {
-      padding-left: 2.5rem; /* 40px on large screens */
+      padding-left: 2.5rem; /* 40px on xl screens - reduced from 48px */
       padding-right: 2.5rem;
     }
   }
 
-  @media (min-width: 1280px) {
-    .container {
-      padding-left: 3rem; /* 48px on xl screens */
-      padding-right: 3rem;
-    }
-  }
-
-  /* Content container with additional horizontal padding */
+  /* Content container with additional horizontal padding - Reduced */
   .container-content {
     @apply mx-auto w-full;
-    /* Enhanced responsive padding system with more horizontal padding */
-    padding-left: 2rem; /* 32px on mobile */
-    padding-right: 2rem;
+    /* Enhanced responsive padding system with more horizontal padding - Reduced */
+    padding-left: 1.5rem; /* 24px on mobile - reduced from 32px */
+    padding-right: 1.5rem;
     max-width: 1280px;
   }
 
-  /* Responsive padding breakpoints for content container */
+  /* Responsive padding breakpoints for content container - Reduced */
   @media (min-width: 640px) {
     .container-content {
-      padding-left: 3rem; /* 48px on small screens */
-      padding-right: 3rem;
+      padding-left: 2rem; /* 32px on small screens - reduced from 48px */
+      padding-right: 2rem;
     }
   }
 
   @media (min-width: 768px) {
     .container-content {
-      padding-left: 4rem; /* 64px on medium screens */
+      padding-left: 3rem; /* 48px on medium screens - reduced from 64px */
+      padding-right: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-content {
+      padding-left: 4rem; /* 64px on large screens - reduced from 80px */
       padding-right: 4rem;
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     .container-content {
-      padding-left: 5rem; /* 80px on large screens */
+      padding-left: 5rem; /* 80px on xl screens - reduced from 96px */
       padding-right: 5rem;
     }
   }
 
-  @media (min-width: 1280px) {
-    .container-content {
-      padding-left: 6rem; /* 96px on xl screens */
-      padding-right: 6rem;
-    }
-  }
-
   .section {
-    /* Enhanced responsive vertical spacing */
-    padding-top: 4rem; /* 64px on mobile */
-    padding-bottom: 4rem;
+    /* Enhanced responsive vertical spacing - Reduced padding */
+    padding-top: 3rem; /* 48px on mobile - reduced from 64px */
+    padding-bottom: 3rem;
   }
 
   @media (min-width: 640px) {
     .section {
-      padding-top: 5rem; /* 80px on small screens */
-      padding-bottom: 5rem;
+      padding-top: 3.5rem; /* 56px on small screens - reduced from 80px */
+      padding-bottom: 3.5rem;
     }
   }
 
   @media (min-width: 768px) {
     .section {
-      padding-top: 6rem; /* 96px on medium screens */
-      padding-bottom: 6rem;
+      padding-top: 4.5rem; /* 72px on medium screens - reduced from 96px */
+      padding-bottom: 4.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .section {
-      padding-top: 8rem; /* 128px on large screens */
-      padding-bottom: 8rem;
+      padding-top: 6rem; /* 96px on large screens - reduced from 128px */
+      padding-bottom: 6rem;
+    }
+  }
+
+  /* Extra compact sections for Work, Process, and About */
+  .section-compact {
+    padding-top: 2rem; /* 32px on mobile - extra reduced */
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-compact {
+      padding-top: 2.5rem; /* 40px on small screens - extra reduced */
+      padding-bottom: 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .section-compact {
+      padding-top: 3rem; /* 48px on medium screens - extra reduced */
+      padding-bottom: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-compact {
+      padding-top: 4rem; /* 64px on large screens - extra reduced */
+      padding-bottom: 4rem;
     }
   }
 
@@ -472,9 +499,6 @@
   background-size: 400% 400%;
   animation: gradient-move 6s ease infinite;
   border-color: rgba(118, 183, 20, 0.8) !important;
-  box-shadow:
-    0 0 30px rgba(118, 183, 20, 0.5),
-    0 0 60px rgba(118, 183, 20, 0.3);
 }
 
 .card-effect .floating-elements {
@@ -653,35 +677,24 @@
   }
 }
 
-/* Service Icons Styling - Keep all your original icon styles */
-.service-icon {
-  filter: brightness(0) saturate(100%) invert(1);
-  transition: filter 0.3s ease;
+/* Embla Carousel - Official Implementation */
+.embla__container {
+  display: flex;
+  width: 100%;
 }
 
-[data-theme='light'] .service-icon {
-  filter: brightness(0) saturate(100%) invert(13%) sepia(10%) saturate(1000%)
-    hue-rotate(200deg) brightness(98%) contrast(92%);
+.embla__slide {
+  flex-shrink: 0;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
-[data-theme='dark'] .service-icon {
-  filter: brightness(0) saturate(100%) invert(1);
+/* Remove any conflicting spacing from CSS since we handle it in the component */
+.embla__slide {
+  /* No additional CSS spacing - handled by flex-basis and padding in component */
 }
 
-/* Mobile menu icon styling */
-.mobile-menu-icon {
-  filter: brightness(0) saturate(100%) invert(84%) sepia(31%) saturate(638%)
-    hue-rotate(56deg) brightness(97%) contrast(86%);
-  transition: all 0.2s ease-in-out;
-}
-
-.mobile-menu-icon:hover {
-  filter: brightness(0) saturate(100%) invert(84%) sepia(31%) saturate(638%)
-    hue-rotate(56deg) brightness(97%) contrast(86%);
-  transform: scale(1.1);
-}
-
-[data-theme='dark'] .mobile-menu-icon {
-  filter: brightness(0) saturate(100%) invert(84%) sepia(31%) saturate(638%)
-    hue-rotate(56deg) brightness(97%) contrast(86%);
+/* Override Card component padding for services carousel */
+.embla__slide .card-content {
+  padding: 1.25rem !important; /* Override Card's default p-6 */
 }

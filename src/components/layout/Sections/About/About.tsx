@@ -2,13 +2,14 @@
 
 import { Card, CardContent } from '@/components/ui/Card';
 import Image from 'next/image';
+import { Icon } from '@iconify/react';
 import { cn } from '@/lib/utils';
 import { AboutProps } from './About.types';
 import { ABOUT_PILLARS } from './About.data';
 
 export default function AboutSection({ className }: AboutProps) {
   return (
-    <section id="about" className={cn('section', className)}>
+    <section id="about" className={cn('section section-compact', className)}>
       <div className="container-content">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 min-h-[600px]">
           {/* Left column: Title, badges, and description */}
@@ -24,7 +25,7 @@ export default function AboutSection({ className }: AboutProps) {
               </p>
 
               {/* Three pillars: Render, Refine, Mobilize */}
-              <div className="mt-8 grid grid-cols-1 gap-3 max-w-4xl">
+              <div className="mt-8 grid grid-cols-1 gap-4 max-w-4xl">
                 {ABOUT_PILLARS.map(pillar => (
                   <Card
                     key={pillar.id}
@@ -33,12 +34,11 @@ export default function AboutSection({ className }: AboutProps) {
                   >
                     <CardContent className="card-content px-6 py-4 text-left">
                       <div className="flex items-center gap-5 mb-4">
-                        <Image
-                          src={pillar.icon}
-                          alt={pillar.title}
+                        <Icon
+                          icon={pillar.icon}
+                          className="w-8 h-8 text-[var(--accent-primary)]"
                           width={24}
                           height={24}
-                          className="w-6 h-6"
                         />
                         <h4 className="text-[var(--accent-primary)] font-semibold text-xl heading-5">
                           {pillar.title}

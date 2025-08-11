@@ -11,14 +11,14 @@ import { getWidthClass } from './Work.utils';
 
 export default function WorkSection({ className }: WorkProps) {
   return (
-    <section id="work" className={cn('section', className)}>
+    <section id="work" className={cn('section section-compact', className)}>
       <div className="container-content">
         <div className="mx-auto max-w-2xl text-center">
           <h3 className="heading-3">Our Work</h3>
         </div>
 
         {/* Filter Badges */}
-        <div className="mt-8 flex justify-center items-center gap-3 lg:gap-4">
+        <div className="mt-4 flex justify-center items-center gap-3 lg:gap-4">
           {WORK_FILTERS.map((filter, index) => (
             <Badge
               key={`work-${filter.id}-${index}`}

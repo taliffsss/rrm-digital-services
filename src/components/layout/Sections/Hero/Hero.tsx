@@ -9,7 +9,7 @@ import { HeroProps } from './Hero.types';
 
 export default function HeroSection({ className }: HeroProps) {
   return (
-    <section className={cn('section relative', className)}>
+    <section className={cn('section relative mb-8', className)}>
       {/* Background Glowing Effect - inside hero section */}
       <GlowBackground variant="hero" color="secondary" intensity="medium" />
 

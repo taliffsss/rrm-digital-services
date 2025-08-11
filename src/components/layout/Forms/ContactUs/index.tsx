@@ -164,7 +164,7 @@ const ContactUs: React.FC<ContactUsProps> = ({
                 type="submit"
                 variant="primary"
                 size="md"
-                className="w-full group font-body disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+                className="w-full md:w-auto group font-body disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
                 disabled={isSubmitting || contactMutation.isPending}
               >
                 {contactMutation.isPending ? (
@@ -204,7 +204,7 @@ const ContactUs: React.FC<ContactUsProps> = ({
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
                   </>
