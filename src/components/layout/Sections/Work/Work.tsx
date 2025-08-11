@@ -32,24 +32,65 @@ export default function WorkSection({ className }: WorkProps) {
 
         {/* Work Gallery */}
         <div className="mt-16">
-          <div className="space-y-4 sm:space-y-6 md:space-y-8">
-            {GALLERY_ROWS.map(row => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {GALLERY_ROWS.flatMap(row => row.items).map(item => (
               <div
-                key={row.id}
-                className="flex gap-4 sm:gap-6 md:gap-8 h-48 sm:h-56 md:h-64"
+                key={`work-item-${item.id}`}
+                className="group relative overflow-hidden rounded-lg border border-[var(--border-primary)] bg-[var(--bg-card)] hover:border-[var(--accent-primary)] hover:shadow-[0_0_30px_rgba(118,183,20,0.3)] transition-all duration-300 cursor-pointer"
               >
-                {row.items.map(item => (
-                  <div
-                    key={`work-item-${item.id}`}
-                    className={`${getWidthClass(item.width)} group relative overflow-hidden rounded-lg border border-[var(--border-primary)] bg-[var(--bg-card)] hover:border-[var(--accent-primary)] hover:shadow-[0_0_30px_rgba(118,183,20,0.3)] transition-all duration-300 cursor-pointer`}
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-full"
                   >
+                    <div className="relative w-full h-48 sm:h-56 md:h-64">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                      {/* Hover Arrow */}
+                      <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                        <div className="w-8 h-8 bg-[var(--accent-primary)] rounded-full flex items-center justify-center shadow-lg">
+                          <svg
+                            className="w-4 h-4 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                          <h4 className="font-body text-lg font-semibold mb-1 text-[var(--accent-primary)]">
+                            {item.title}
+                          </h4>
+                          <p className="font-body text-sm text-[var(--text-secondary)]">
+                            {item.category}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="relative w-full h-48 sm:h-56 md:h-64">
                     <Image
                       src={item.image}
                       alt={item.title}
-                      width={500}
-                      height={500}
-                      loading="eager"
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 50vw, 25vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                       <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
@@ -62,27 +103,9 @@ export default function WorkSection({ className }: WorkProps) {
                       </div>
                     </div>
                   </div>
-                ))}
+                )}
               </div>
             ))}
-          </div>
-          <div className="mt-8 sm:mt-10 md:mt-12 text-center">
-            <Button variant="secondary" size="md" className="group font-body">
-              View More
-              <svg
-                className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </Button>
           </div>
         </div>
       </div>

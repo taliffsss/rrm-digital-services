@@ -18,7 +18,7 @@ const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
               <div className="flex items-center space-x-3 mb-6">
                 <ThemeAwareLogo
                   alt="RRM DIGITAL"
-                  className="h-16 w-auto lg:h-24"
+                  className="h-16 w-auto lg:h-20"
                 />
               </div>
             )}
