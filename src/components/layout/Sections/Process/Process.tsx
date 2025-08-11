@@ -11,7 +11,7 @@ import { getStepNumber } from './Process.utils';
 
 export default function ProcessSection({ className }: ProcessProps) {
   return (
-    <section id="process" className={cn('section', className)}>
+    <section id="process" className={cn('section section-compact', className)}>
       <div className="container-content">
         {/* Two-column layout for title and badges */}
         <div className="flex flex-row items-end gap-8 lg:gap-12 mb-16">
@@ -20,7 +20,7 @@ export default function ProcessSection({ className }: ProcessProps) {
             <h3 className="heading-3 text-left">How We Work</h3>
 
             {/* Badge Navigation */}
-            <div className="mt-8 flex flex-wrap items-center gap-3 lg:gap-4">
+            <div className="mt-4 flex flex-wrap items-center gap-3 lg:gap-4">
               {['Clarity', 'Structure', 'Results'].map((badge, index) => (
                 <Badge
                   key={`process-${badge}-${index}`}
@@ -41,12 +41,12 @@ export default function ProcessSection({ className }: ProcessProps) {
 
         {/* Process Steps Grid */}
         <div className="mt-16">
-          <div className="grid grid-cols-1 gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {PROCESS_STEPS.map(step => (
               <Card
                 key={step.id}
                 variant="elevated"
-                className="card-effect group relative transition-all duration-300 hover:shadow-[0_0_30px_rgba(118,183,20,0.3)]"
+                className="card-effect group relative transition-all duration-300"
               >
                 <span className="floating-elements">
                   <span className="small-rect-1"></span>
@@ -55,13 +55,13 @@ export default function ProcessSection({ className }: ProcessProps) {
                   <span className="small-rect-4"></span>
                 </span>
                 <CardContent className="card-content p-6 sm:p-7 lg:p-8 text-left">
-                  <div className="mb-4 sm:mb-5 lg:mb-6">
-                    <h2 className="font-orbitron text-[var(--accent-primary)] text-2xl sm:text-3xl lg:text-4xl">
+                  <div className="mb-4">
+                    <h2 className="font-orbitron text-[var(--accent-primary)]">
                       {String(getStepNumber(step.id)).padStart(2, '0')}
                     </h2>
                   </div>
-                  <h5 className="heading-5 mb-3 sm:mb-4">{step.title}</h5>
-                  <p className="font-body text-[var(--text-secondary)] text-sm sm:text-base">
+                  <h5 className="heading-5 mb-3">{step.title}</h5>
+                  <p className="font-body text-[var(--text-secondary)]">
                     {step.description}
                   </p>
                 </CardContent>
@@ -71,7 +71,7 @@ export default function ProcessSection({ className }: ProcessProps) {
         </div>
 
         {/* Call to Action Banner */}
-        <div className="mt-12 sm:mt-16 lg:mt-20">
+        <div className="mt-12 sm:mt-14">
           <div className="bg-[var(--bg-card)] rounded-2xl p-6 sm:p-7 lg:p-8 border border-[var(--border-primary)]">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-7 lg:gap-8 text-center lg:text-left">
               {/* Profile images and text - grouped together */}
@@ -126,6 +126,12 @@ export default function ProcessSection({ className }: ProcessProps) {
                   variant="primary"
                   size="md"
                   className="group font-body cursor-pointer"
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   <span>Connect with us</span>
                   <svg

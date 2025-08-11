@@ -8,6 +8,7 @@ export interface WorkItem {
   title: string;
   category: string;
   width: string;
+  link?: string;
 }
 
 export interface WorkRow {

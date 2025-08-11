@@ -7,6 +7,7 @@ import { NavbarProps, MobileMenuProps } from './Navbar.types';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import ThemeAwareLogo from '@/components/ui/ThemeAwareLogo';
+import { Icon } from '@iconify/react';
 import Image from 'next/image';
 
 const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
@@ -43,15 +44,15 @@ const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
   const getIconForItem = (label: string) => {
     switch (label.toLowerCase()) {
       case 'services':
-        return '/icon/services.svg';
+        return 'ph:briefcase-simple';
       case 'projects':
-        return '/icon/projects.svg';
+        return 'ph:target';
       case 'how we work':
-        return '/icon/how_we_work.svg';
+        return 'ph:gear-six';
       case 'about us':
-        return '/icon/about_us.svg';
+        return 'ph:users';
       default:
-        return '/icon/services.svg'; // fallback
+        return 'ph:briefcase-simple'; // fallback
     }
   };
 
@@ -99,12 +100,11 @@ const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
                 onClick={handleClose}
               >
                 <div className="w-5 h-5 flex-shrink-0">
-                  <Image
-                    src={getIconForItem(item.label)}
-                    alt={item.label}
+                  <Icon
+                    icon={getIconForItem(item.label)}
+                    className="w-full h-full text-[var(--accent-primary)]"
                     width={20}
                     height={20}
-                    className="w-full h-full mobile-menu-icon"
                   />
                 </div>
                 <span className="font-body text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors">

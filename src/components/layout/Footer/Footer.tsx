@@ -8,12 +8,9 @@ import Image from 'next/image';
 const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
   return (
     <footer
-      className={cn(
-        'bg-[var(--bg-primary)] border-t border-[var(--border-primary)]/20',
-        className
-      )}
+      className={cn('border-t border-[var(--border-primary)]/20', className)}
     >
-      <div className="container py-12 lg:py-16 xl:py-20">
+      <div className="container py-8 lg:py-12 xl:py-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-4">
@@ -21,14 +18,14 @@ const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
               <div className="flex items-center space-x-3 mb-6">
                 <ThemeAwareLogo
                   alt="RRM DIGITAL"
-                  className="h-12 w-auto lg:h-16"
+                  className="h-16 w-auto lg:h-20"
                 />
               </div>
             )}
             <div className="mb-6 lg:mb-8">
-              <h3 className="font-body font-semibold text-[var(--text-primary)] mb-2 lg:mb-3">
+              <h4 className="font-body font-semibold text-[var(--text-primary)] mb-2 lg:mb-3">
                 RRM Digital Services
-              </h3>
+              </h4>
               <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed">
                 We render, refine, and mobilize your success.
               </p>
@@ -89,7 +86,7 @@ const Footer = ({ sections, logo, socialLinks, className }: FooterProps) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 lg:mt-16 pt-8 lg:pt-12 border-t border-[var(--border-primary)]/30">
+        <div className="mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-[var(--border-primary)]/30">
           <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
             <p className="font-body text-sm text-[var(--text-secondary)]">
               RRM Digital Services {new Date().getFullYear()} All Rights
