@@ -1,13 +1,11 @@
 'use client';
 
 import { WORK_FILTERS } from '@/constants/content';
-import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { WorkProps } from './Work.types';
 import { GALLERY_ROWS } from './Work.data';
-import { getWidthClass } from './Work.utils';
 
 export default function WorkSection({ className }: WorkProps) {
   return (
