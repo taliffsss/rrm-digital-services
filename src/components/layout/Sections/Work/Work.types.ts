@@ -7,7 +7,7 @@ export interface WorkItem {
   image: string;
   title: string;
   category: string;
-  width: string;
+  width?: string;
   link?: string;
 }
 

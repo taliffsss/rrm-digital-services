@@ -8,7 +8,6 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import ThemeAwareLogo from '@/components/ui/ThemeAwareLogo';
 import { Icon } from '@iconify/react';
-import Image from 'next/image';
 
 const MobileMenu = ({ items, isOpen, onClose }: MobileMenuProps) => {
   const [isAnimating, setIsAnimating] = useState(false);

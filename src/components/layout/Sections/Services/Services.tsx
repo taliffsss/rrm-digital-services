@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { SERVICES } from '@/constants/content';
 import { Card, CardContent } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
@@ -21,6 +21,9 @@ export default function ServicesSection({ className }: ServicesProps) {
   });
 
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const autoPlayIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const userInteractionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -42,17 +45,87 @@ export default function ServicesSection({ className }: ServicesProps) {
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
+  // Auto-play functionality
+  const startAutoPlay = useCallback(() => {
+    if (!emblaApi || !isAutoPlaying) return;
+
+    autoPlayIntervalRef.current = setInterval(() => {
+      if (emblaApi && isAutoPlaying) {
+        emblaApi.scrollNext();
+      }
+    }, 10000); // 10 seconds
+  }, [emblaApi, isAutoPlaying]);
+
+  const stopAutoPlay = useCallback(() => {
+    if (autoPlayIntervalRef.current) {
+      clearInterval(autoPlayIntervalRef.current);
+      autoPlayIntervalRef.current = null;
+    }
+  }, []);
+
+  const pauseAutoPlay = useCallback(() => {
+    setIsAutoPlaying(false);
+    stopAutoPlay();
+  }, [stopAutoPlay]);
+
+  const resumeAutoPlay = useCallback(() => {
+    setIsAutoPlaying(true);
+    startAutoPlay();
+  }, [startAutoPlay]);
+
+  // Handle user interaction - pause auto-play temporarily
+  const handleUserInteraction = useCallback(() => {
+    pauseAutoPlay();
+
+    // Resume auto-play after 5 seconds of no interaction
+    if (userInteractionTimeoutRef.current) {
+      clearTimeout(userInteractionTimeoutRef.current);
+    }
+
+    userInteractionTimeoutRef.current = setTimeout(() => {
+      resumeAutoPlay();
+    }, 5000);
+  }, [pauseAutoPlay, resumeAutoPlay]);
+
   // Set up event listeners
   useEffect(() => {
     if (!emblaApi) return;
+
     onSelect();
     emblaApi.on('select', onSelect);
     emblaApi.on('reInit', onSelect);
+
+    // Add user interaction listeners
+    emblaApi.on('pointerDown', handleUserInteraction);
+    emblaApi.on('init', handleUserInteraction);
+
     return () => {
       emblaApi.off('select', onSelect);
       emblaApi.off('reInit', onSelect);
+      emblaApi.off('pointerDown', handleUserInteraction);
+      emblaApi.off('init', handleUserInteraction);
     };
-  }, [emblaApi, onSelect]);
+  }, [emblaApi, onSelect, handleUserInteraction]);
+
+  // Start auto-play when component mounts or emblaApi changes
+  useEffect(() => {
+    if (emblaApi && isAutoPlaying) {
+      startAutoPlay();
+    }
+
+    return () => {
+      stopAutoPlay();
+    };
+  }, [emblaApi, isAutoPlaying, startAutoPlay, stopAutoPlay]);
+
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (userInteractionTimeoutRef.current) {
+        clearTimeout(userInteractionTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section id="services" className={cn('section section-compact', className)}>
@@ -82,7 +155,7 @@ export default function ServicesSection({ className }: ServicesProps) {
             ref={emblaRef}
           >
             <div className="embla__container flex">
-              {SERVICES.map((service, index) => (
+              {SERVICES.map(service => (
                 <div
                   key={service.id}
                   className="embla__slide flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] pr-6"
@@ -133,11 +206,14 @@ export default function ServicesSection({ className }: ServicesProps) {
           </div>
 
           {/* Navigation and Indicators - Below the cards */}
-          <div className=" flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4">
             {/* Navigation Arrows */}
             <div className="flex items-center gap-6">
               <button
-                onClick={scrollPrev}
+                onClick={() => {
+                  scrollPrev();
+                  handleUserInteraction();
+                }}
                 className="w-10 h-10 rounded-full border border-[var(--border-primary)] bg-[var(--bg-card)] hover:bg-[var(--bg-secondary)] transition-colors flex items-center justify-center group"
                 aria-label="Previous slide"
               >
@@ -158,10 +234,13 @@ export default function ServicesSection({ className }: ServicesProps) {
 
               {/* Slider Indicators */}
               <div className="flex items-center gap-2">
-                {SERVICES.map((_, index) => (
+                {SERVICES.map((service, index) => (
                   <button
-                    key={index}
-                    onClick={() => scrollTo(index)}
+                    key={service.id}
+                    onClick={() => {
+                      scrollTo(index);
+                      handleUserInteraction();
+                    }}
                     className={cn(
                       'w-2 h-2 rounded-full transition-all duration-300',
                       selectedIndex === index
@@ -174,7 +253,10 @@ export default function ServicesSection({ className }: ServicesProps) {
               </div>
 
               <button
-                onClick={scrollNext}
+                onClick={() => {
+                  scrollNext();
+                  handleUserInteraction();
+                }}
                 className="w-10 h-10 rounded-full border border-[var(--border-primary)] bg-[var(--bg-card)] hover:bg-[var(--bg-secondary)] transition-colors flex items-center justify-center group"
                 aria-label="Next slide"
               >
